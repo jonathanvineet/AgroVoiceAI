@@ -11,7 +11,7 @@ export default async function OnboardingPreference() {
   const user = await getCurrentUser()
   console.log(user)
   if (user?.pageShown && session) {
-    redirect('/options')
+    redirect('/')
   }
   if (!session?.user?.id) {
     redirect('/sign-in')
@@ -29,6 +29,7 @@ export default async function OnboardingPreference() {
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-green-50 [mask-image:radial-gradient(ellipse_at_center,transparent_1%,purple)]"></div>
           <OnboardingPreferenceForm
             user={user}
+            userId={session.user.id}
             className=""
             back={t('onboarding.back')}
             saveName={t('onboarding.save&next')}

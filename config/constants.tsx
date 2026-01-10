@@ -442,19 +442,19 @@ export const translateOptions = [
 
 export const exampleMessagesEnglish = [
   {
-    heading: 'How can I',
-    subheading: 'maximize limited space for crop cultivation?',
+    heading: 'How can I maximize',
+    subheading: 'limited space for crop cultivation?',
     message:
       'How can a small-scale farmer maximize limited space for crop cultivation?'
   },
   {
-    heading: 'How do I',
-    subheading: 'improve soil condition using natural methods?',
+    heading: 'How do I improve',
+    subheading: 'soil condition using natural methods?',
     message: 'How do I improve soil condition using natural methods?'
   },
   {
-    heading: 'How can I',
-    subheading: 'prevent pests and diseases in my paddy?',
+    heading: 'How can I prevent',
+    subheading: 'pests and diseases in my paddy?',
     message: 'How can I prevent pests and diseases in my paddy?'
   },
   {

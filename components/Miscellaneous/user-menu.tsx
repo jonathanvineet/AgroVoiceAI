@@ -1,8 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { User, Session } from 'next-auth'
-import { signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import {
@@ -14,11 +13,11 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Settings, SunMoon, LogOut } from 'lucide-react'
 import Link from 'next/link'
-import { getCurrentUser, getUser } from '@/app/actions'
+import { getCurrentUser } from '@/app/actions'
 import { ThemeToggle } from '../Theme/theme-toggle'
 
 export interface UserMenuProps {
-  user?: Session['user']
+  user?: any
   settings: string
   appearance: string
   logout: string
@@ -30,15 +29,16 @@ function getUserInitials(name: string) {
 }
 
 export function UserMenu({ settings, appearance, logout }: UserMenuProps) {
-  const [session, setSession] = useState<User | undefined>(undefined)
+  const [session, setSession] = useState<any | undefined>(undefined)
   const [open, setOpen] = useState(false)
   const { setTheme, theme } = useTheme()
+  const router = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const sessionData = await getCurrentUser()
-        setSession(sessionData as unknown as User | undefined)
+        setSession(sessionData)
       } catch (error) {
         console.error('Error fetching user data:', error)
       }
@@ -128,11 +128,10 @@ export function UserMenu({ settings, appearance, logout }: UserMenuProps) {
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem
-                onClick={() =>
-                  signOut({
-                    callbackUrl: '/'
-                  })
-                }
+                onClick={async () => {
+                  await fetch('/api/auth/logout', { method: 'POST' })
+                  router.push('/')
+                }}
                 className="text-sm h-8 flex items-center rounded-lg cursor-pointer"
               >
                 <LogOut className="size-4 mr-2" /> {logout}

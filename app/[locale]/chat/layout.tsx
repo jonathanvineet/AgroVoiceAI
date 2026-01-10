@@ -16,7 +16,7 @@ export default async function ChatLayout({ children }: ChatLayoutProps) {
   const session = await auth()
   const user = await getCurrentUser()
   const t = await getTranslations('Index')
-  if (!user?.pageShown && user) {
+  if (!user?.page_shown && session) {
     redirect('/onboarding/location')
   }
   return (

@@ -25,6 +25,7 @@ import { FooterText } from './footer-text'
 
 export default function OnboardingPreferenceForm({
   user,
+  userId,
   className,
   title,
   description,
@@ -40,6 +41,9 @@ export default function OnboardingPreferenceForm({
 
   const router = useRouter()
   const locale = useLocale()
+  
+  // Use userId from props, fallback to user.id if available
+  const currentUserId = userId || user?.id
 
   const handlePrefChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setPreference(event.target.value)
@@ -122,14 +126,14 @@ export default function OnboardingPreferenceForm({
                 ).then(() => {
                   setNext(true)
                   setIsSavingPref(true)
-                  updatePageShown(user.id)
-                  router.push('/options')
+                  updatePageShown(currentUserId)
+                  router.push('/')
                 })
               } else {
                 setNext(true)
                 setIsSavingPref(true)
-                updatePageShown(user.id)
-                router.push('/options')
+                updatePageShown(currentUserId)
+                router.push('/')
               }
             }}
           >

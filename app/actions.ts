@@ -40,8 +40,8 @@ export async function getUser() {
 export async function updatePageShown(userId: string) {
   const supabase = createAdminSupabaseClient()
   const { error } = await supabase
-    .from('users')
-    .update({ pageShown: true })
+    .from('profiles')
+    .update({ page_shown: true })
     .eq('id', userId)
   
   if (error) {
@@ -55,8 +55,8 @@ export async function getLocation() {
   
   const supabase = createAdminSupabaseClient()
   const { data, error } = await supabase
-    .from('users')
-    .select('userDistrict')
+    .from('profiles')
+    .select('user_district')
     .eq('id', userId)
   
   if (error) {
@@ -73,7 +73,7 @@ export async function getCurrentUser() {
   
   const supabase = createAdminSupabaseClient()
   const { data, error } = await supabase
-    .from('users')
+    .from('profiles')
     .select('*')
     .eq('id', id)
   
@@ -83,7 +83,12 @@ export async function getCurrentUser() {
   }
   
   // Handle case where user doesn't exist yet (returns empty array)
-  return data && data.length > 0 ? data[0] : null
+  if (!data || data.length === 0) {
+    console.log('Profile not found for user:', id, '- returning null')
+    return null
+  }
+  
+  return data[0]
 }
 
 export async function getUserId() {

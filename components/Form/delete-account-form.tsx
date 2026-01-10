@@ -27,7 +27,6 @@ import {
 import { cn } from '@/lib/utils'
 import { Loader2, Trash2 } from 'lucide-react'
 import { clearChats, deleteAccount, removeImage } from '@/app/actions'
-import { signOut } from 'next-auth/react'
 import MyToast from '../ui/my-toast'
 import { SettingsProps } from '@/lib/types'
 import { useLocale } from 'next-intl'
@@ -105,8 +104,8 @@ export function DeleteAccount({
                           : 'கணக்கு வெற்றிகரமாக நீக்கப்பட்டது',
                       type: 'success'
                     })
-                    window.history.pushState({}, '', `/`)
-                    signOut()
+                    await fetch('/api/auth/logout', { method: 'POST' })
+                    window.location.href = '/'
                   } catch (error) {
                     MyToast({
                       message:

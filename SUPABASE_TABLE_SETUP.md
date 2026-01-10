@@ -13,12 +13,23 @@ Copy and paste this SQL into your Supabase SQL Editor to create the users table.
 ## SQL Script
 
 ```sql
--- Create users table
+-- Create users table with all required columns
 CREATE TABLE IF NOT EXISTS users (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   email TEXT UNIQUE,
   name TEXT,
+  user_name TEXT UNIQUE,
+  password TEXT,
+  role TEXT DEFAULT 'user',
+  phone TEXT UNIQUE,
+  age TEXT,
+  user_district TEXT,
+  gender TEXT,
+  email_verified TIMESTAMP WITH TIME ZONE,
   image TEXT,
+  pest_image TEXT,
+  chatbot_preference TEXT,
+  page_shown BOOLEAN DEFAULT false,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -26,6 +37,8 @@ CREATE TABLE IF NOT EXISTS users (
 -- Create index for faster lookups
 CREATE INDEX IF NOT EXISTS idx_users_id ON users(id);
 CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
+CREATE INDEX IF NOT EXISTS idx_users_phone ON users(phone);
+CREATE INDEX IF NOT EXISTS idx_users_district ON users(user_district);
 
 -- Enable RLS
 ALTER TABLE users ENABLE ROW LEVEL SECURITY;
@@ -40,14 +53,22 @@ CREATE POLICY "Users can update own data"
   ON users FOR UPDATE
   USING (auth.uid() = id);
 
--- Policy: Allow service role to insert users (for signup)
-CREATE POLICY "Service role can insert users"
-  ON users FOR INSERT
+-- Policy: Allow service role to manage all users
+CREATE POLICY "Service role can manage all"
+  ON users FOR ALL
+  USING (true)
   WITH CHECK (true);
+
+-- Policy: Allow authenticated users to insert
+CREATE POLICY "Authenticated users can insert"
+  ON users FOR INSERT
+  WITH CHECK (auth.uid() = id);
 
 -- Grant permissions
 GRANT USAGE ON SCHEMA public TO anon;
+GRANT USAGE ON SCHEMA public TO authenticated;
 GRANT ALL ON public.users TO authenticated;
+GRANT ALL ON public.users TO service_role;
 ```
 
 ## Verify Setup

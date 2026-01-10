@@ -98,18 +98,16 @@ export function OnboardingLocationForm({
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </div>
-        <p className="flex justify-start text-sm pb-4 dark:text-gray-500 text-gray-700">
-          <Tooltip delayDuration={0}>
-            <TooltipTrigger>
-              <Info className="size-5 mr-3" />
-            </TooltipTrigger>
-            <TooltipContent>
-              {locale === 'en'
-                ? 'It helps in recommendations based on your region.'
-                : 'உங்கள் பகுதியின் அடிப்படையில் பரிந்துரைக்க உதவுகின்றது.'}
-            </TooltipContent>
-          </Tooltip>
-        </p>
+        <Tooltip delayDuration={0}>
+          <TooltipTrigger asChild>
+            <Info className="size-5 mr-3 cursor-help" />
+          </TooltipTrigger>
+          <TooltipContent>
+            {locale === 'en'
+              ? 'It helps in recommendations based on your region.'
+              : 'உங்கள் பகுதியின் அடிப்படையில் பரிந்துரைக்க உதவுகின்றது.'}
+          </TooltipContent>
+        </Tooltip>
       </CardHeader>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>

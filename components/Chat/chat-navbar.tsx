@@ -55,23 +55,21 @@ export default function ChatNavbar({
               <div className="flex items-center">
                 {navConfig &&
                   navConfig.mainNav.map((item, index) => (
-                    <>
-                      <Link
-                        key={index}
-                        aria-label={item.title}
-                        href={item.href}
-                        className={cn(
-                          '2xl:text-md text-sm dark:hover:text-white items-center overflow-hidden mr-4 dark:text-zinc-300 text-zinc-900 rounded-md p-2 font-pops'
-                        )}
-                      >
-                        <p className="flex items-center">
-                          {item.icon}{' '}
-                          <span className="text-[0.95rem]">
-                            {navItems[index]}
-                          </span>
-                        </p>
-                      </Link>
-                    </>
+                    <Link
+                      key={`nav-${item.href}-${index}`}
+                      aria-label={item.title}
+                      href={item.href}
+                      className={cn(
+                        '2xl:text-md text-sm dark:hover:text-white items-center overflow-hidden mr-4 dark:text-zinc-300 text-zinc-900 rounded-md p-2 font-pops'
+                      )}
+                    >
+                      <span className="flex items-center">
+                        {item.icon}{' '}
+                        <span className="text-[0.95rem]">
+                          {navItems[index]}
+                        </span>
+                      </span>
+                    </Link>
                   ))}
               </div>
             </NavigationMenuLink>
@@ -116,7 +114,7 @@ export default function ChatNavbar({
               {navConfig &&
                 navConfig.mainNav.map((item, index) => (
                   <Link
-                    key={index}
+                    key={`mobile-nav-${item.href}-${index}`}
                     className="flex w-full font-pops items-center py-2 text-lg"
                     href={item.href}
                     aria-label={item.title}

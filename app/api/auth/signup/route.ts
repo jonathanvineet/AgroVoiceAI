@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     // Use admin client to bypass RLS for user creation
     const adminClient = createAdminSupabaseClient()
-    const { error: insertError } = await adminClient.from('users').insert({
+    const { error: insertError, data: profileData } = await adminClient.from('profiles').insert({
       id: authData.user.id,
       email: email,
       name: name || email.split('@')[0],
@@ -51,9 +51,15 @@ export async function POST(request: NextRequest) {
     })
 
     if (insertError) {
-      console.error('Error creating user record:', insertError)
-      // Don't fail if user record creation fails, auth user is already created
+      console.error('Error creating profile record:', insertError)
+      // Return error so client knows profile creation failed
+      return NextResponse.json(
+        { error: 'Profile creation failed: ' + insertError.message },
+        { status: 500 }
+      )
     }
+    
+    console.log('Profile created successfully:', profileData)
 
     return NextResponse.json(
       { 

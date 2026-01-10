@@ -108,6 +108,7 @@ export type SettingsProps = {
 
 export type OnboardingFormProps = {
   user?: any
+  userId?: string
   className?: string
   welcome?: string
   title?: string
