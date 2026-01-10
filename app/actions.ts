@@ -5,9 +5,8 @@ import { redirect } from 'next/navigation'
 
 import { auth } from '@/lib/auth'
 import { type Chat } from '@/lib/types'
-
+import { createServerSupabaseClient, createAdminSupabaseClient } from '@/lib/supabase-server'
 import redis from '@/lib/redis'
-import { db } from '@/lib/db'
 import { NextResponse } from 'next/server'
 
 export async function getChats(userId?: string | null) {
@@ -39,38 +38,52 @@ export async function getUser() {
 }
 
 export async function updatePageShown(userId: string) {
-  await db.user.update({
-    where: {
-      id: userId
-    },
-    data: {
-      pageShown: true
-    }
-  })
+  const supabase = createAdminSupabaseClient()
+  const { error } = await supabase
+    .from('users')
+    .update({ pageShown: true })
+    .eq('id', userId)
+  
+  if (error) {
+    console.error('Error updating pageShown:', error)
+  }
 }
 
 export async function getLocation() {
   const userId = await getUserId()
-  const district = await db.user.findMany({
-    where: {
-      id: userId
-    },
-    select: {
-      userDistrict: true
-    }
-  })
-
-  return district
+  if (!userId) return []
+  
+  const supabase = createAdminSupabaseClient()
+  const { data, error } = await supabase
+    .from('users')
+    .select('userDistrict')
+    .eq('id', userId)
+  
+  if (error) {
+    console.error('Error getting location:', error)
+    return []
+  }
+  
+  return data || []
 }
 
 export async function getCurrentUser() {
   const id = await getUserId()
-  const user = await db.user.findFirst({
-    where: {
-      id: id
-    }
-  })
-  return user
+  if (!id) return null
+  
+  const supabase = createAdminSupabaseClient()
+  const { data, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', id)
+  
+  if (error) {
+    console.error('Error getting current user:', error)
+    return null
+  }
+  
+  // Handle case where user doesn't exist yet (returns empty array)
+  return data && data.length > 0 ? data[0] : null
 }
 
 export async function getUserId() {

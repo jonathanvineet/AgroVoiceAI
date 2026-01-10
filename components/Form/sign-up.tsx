@@ -100,68 +100,76 @@ export function CreateAccount({
               e.preventDefault()
               setIsLoading(true)
               try {
-                nameSchema.parse(name)
-                nameSchema.parse(password)
-                if (!validateInput(name) || !validateInput(password)) {
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                if (!emailRegex.test(name)) {
                   MyToast({
                     message:
                       locale === 'en'
-                        ? 'Dont try to inject code. 😒'
-                        : 'குறியீட்டை உட்செலுத்த முயற்சிக்காதீர்கள். 😒',
+                        ? 'Please enter a valid email address'
+                        : 'தயவுசெய்து வரையறுக்கப்பட்ட மின்னஞ்சல் முகவரி உள்ளிடவும்',
                     type: 'error'
                   })
-                } else {
-                  const response = await fetch('/api/auth/register', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                      name: name,
-                      pswd: password
-                    })
-                  })
+                  setIsLoading(false)
+                  return
+                }
 
-                  if (response.status === 200) {
-                    MyToast({
-                      message:
-                        locale === 'en'
-                          ? 'Account created! Please sign in.'
-                          : 'கணக்கு உருவாக்கப்பட்டது! உள்நுழையவும்.',
-                      type: 'success'
-                    })
-                    setTimeout(() => {
-                      router.refresh()
-                      router.push('/sign-in')
-                    }, 2000)
-                  } else {
-                    MyToast({
-                      message:
-                        locale === 'en'
-                          ? 'The user already exists. Please sign in'
-                          : 'பயனர் ஏற்கனவே இருக்கிறார். உள்நுழையவும்',
-                      type: 'error'
-                    })
-                  }
+                // Validate password length
+                if (password.length < 6) {
+                  MyToast({
+                    message:
+                      locale === 'en'
+                        ? 'Password must be at least 6 characters'
+                        : 'கடவுச்சொல் குறைந்ததும் 6 எழுத்துகள் கொண்டிருக்க வேண்டும்',
+                    type: 'error'
+                  })
+                  setIsLoading(false)
+                  return
+                }
+
+                // Call sign-up API
+                const response = await fetch('/api/auth/signup', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    email: name,
+                    password: password
+                  })
+                })
+
+                if (response.status === 201) {
+                  MyToast({
+                    message:
+                      locale === 'en'
+                        ? 'Account created! Please sign in.'
+                        : 'கணக்கு உருவாக்கப்பட்டது! உள்நுழையவும்.',
+                    type: 'success'
+                  })
+                  setTimeout(() => {
+                    router.refresh()
+                    router.push('/sign-in')
+                  }, 2000)
+                } else {
+                  const data = await response.json()
+                  MyToast({
+                    message:
+                      locale === 'en'
+                        ? data.error || 'The user already exists. Please sign in'
+                        : 'பயனர் ஏற்கனவே இருக்கிறார். உள்நுழையவும்',
+                    type: 'error'
+                  })
                 }
               } catch (error: any) {
-                if (error instanceof z.ZodError) {
-                  MyToast({
-                    message:
-                      locale === 'en'
-                        ? 'Username & Password must contain at least 4 characters.'
-                        : 'பயனர்பெயர் மற்றும் கடவுச்சொல் குறைந்ததும் 4 எழுத்துகள் கொண்டிருக்க வேண்டும்.',
-                    type: 'error'
-                  })
-                } else {
-                  MyToast({
-                    message:
-                      locale === 'en'
-                        ? 'An error occurred. Please try again later.'
-                        : 'பிழை ஏற்பட்டது. பிறகு முயற்சிக்கவும்.',
-                    type: 'error'
-                  })
-                }
+                console.error('Sign up error:', error)
+                MyToast({
+                  message:
+                    locale === 'en'
+                      ? 'An error occurred. Please try again later.'
+                      : 'பிழை ஏற்பட்டது. பிறகு முயற்சிக்கவும்.',
+                  type: 'error'
+                })
               } finally {
                 setIsLoading(false)
               }
@@ -175,7 +183,7 @@ export function CreateAccount({
               <div className=" relative group/btn flex space-x-2 items-center justify-center px-1 w-full  rounded-md h-10 font-medium shadow-input hover:bg-transparent dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]">
                 <Input
                   id="name"
-                  type="name"
+                  type="email"
                   placeholder={placeholder1}
                   value={name}
                   onChange={handleNameChange}

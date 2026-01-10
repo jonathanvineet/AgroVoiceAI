@@ -11,7 +11,6 @@ import { Inter, Poppins, Bricolage_Grotesque } from 'next/font/google'
 import { TailwindIndicator } from '@/components/Theme/tailwind-indicator'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
-import Head from 'next/head'
 import { Metadata, Viewport } from 'next'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -89,16 +88,6 @@ export default function RootLayout({
 }: RootLayoutProps) {
   return (
     <html lang={locale} suppressHydrationWarning>
-      <Head>
-        <meta name="mobile-web-app-capable" content="yes" />
-        {/* <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/en/favicon-32x32.png"
-        />
-        <link rel="shortcut icon" href="/en/favicon.ico" /> */}
-      </Head>
       <body
         className={cn(
           'font-san antialiased scroll-smooth font-bricol transition-transform duration-1000',

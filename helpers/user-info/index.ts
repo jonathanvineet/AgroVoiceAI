@@ -8,7 +8,6 @@ import {
   validateInput
 } from '@/lib/schema'
 import { User } from '@prisma/client/edge'
-import { signIn } from 'next-auth/react'
 import { z } from 'zod'
 import { getDatabase } from 'firebase/database'
 import { app } from '@/lib/firebase'
@@ -342,14 +341,20 @@ const handleSubmit = async (
   e.preventDefault()
   setIsFieldLoading(true)
   try {
-    const res = await signIn('credentials', {
-      redirect: false,
-      name: name,
-      password: password,
-      callbackUrl: '/onboarding/location'
+    const res = await fetch('/api/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: name,
+        password: password
+      })
     })
 
-    if (res?.url?.includes('onboarding')) {
+    if (res.ok) {
+      // Redirect to options page (main dashboard)
+      window.location.href = '/options'
       return true
     } else {
       return false

@@ -1,0 +1,72 @@
+import { createServerSupabaseClient, createAdminSupabaseClient } from '@/lib/supabase-server'
+import { NextRequest, NextResponse } from 'next/server'
+import { hashPassword } from '@/lib/utils'
+
+export async function POST(request: NextRequest) {
+  try {
+    const { email, password, name } = await request.json()
+
+    if (!email || !password) {
+      return NextResponse.json(
+        { error: 'Email and password are required' },
+        { status: 400 }
+      )
+    }
+
+    const supabase = await createServerSupabaseClient()
+
+    // Sign up user with Supabase Auth
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          name: name || email.split('@')[0]
+        }
+      }
+    })
+
+    if (authError) {
+      return NextResponse.json(
+        { error: authError.message },
+        { status: 400 }
+      )
+    }
+
+    if (!authData.user) {
+      return NextResponse.json(
+        { error: 'User creation failed' },
+        { status: 400 }
+      )
+    }
+
+    // Use admin client to bypass RLS for user creation
+    const adminClient = createAdminSupabaseClient()
+    const { error: insertError } = await adminClient.from('users').insert({
+      id: authData.user.id,
+      email: email,
+      name: name || email.split('@')[0],
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    })
+
+    if (insertError) {
+      console.error('Error creating user record:', insertError)
+      // Don't fail if user record creation fails, auth user is already created
+    }
+
+    return NextResponse.json(
+      { 
+        message: 'User registered successfully',
+        user: authData.user 
+      },
+      { status: 201 }
+    )
+  } catch (error) {
+    console.error('Signup error:', error)
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    )
+  }
+}

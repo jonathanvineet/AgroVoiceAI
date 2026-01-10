@@ -1,100 +1,50 @@
-import NextAuth, { type DefaultSession } from 'next-auth'
-import Google from 'next-auth/providers/google'
-import Credentials from 'next-auth/providers/credentials'
+import { createServerSupabaseClient } from './supabase-server'
 
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { db } from './db'
-import { hashPassword } from './utils'
+/**
+ * Get the current user session using Supabase
+ * This is a compatibility layer for existing code that imports from @/lib/auth
+ * 
+ * Returns the Supabase user object or null if not authenticated
+ */
+export async function auth() {
+  try {
+    const supabase = await createServerSupabaseClient()
+    const {
+      data: { user },
+      error
+    } = await supabase.auth.getUser()
 
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      /** The user's id. */
-      id: string
-      password: string
-    } & DefaultSession['user']
+    if (error) {
+      console.error('Auth error:', error)
+      return null
+    }
+
+    // Return a user object compatible with existing code
+    if (user) {
+      return {
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.user_metadata?.name || user.email?.split('@')[0],
+          image: user.user_metadata?.image || null
+        }
+      }
+    }
+
+    return null
+  } catch (error) {
+    console.error('Session retrieval error:', error)
+    return null
   }
 }
 
-export const {
-  handlers: { GET, POST },
-  auth
-} = NextAuth({
-  providers: [
-    Google,
-    Credentials({
-      authorize: async credentials => {
-        console.log('inside authorize')
-        console.log(credentials)
-        const user = await db.user.findUnique({
-          where: {
-            userName: credentials.name as string
-          }
-        })
+export const GET = async () => {
+  // Dummy handler for NextAuth compatibility
+  const session = await auth()
+  return new Response(JSON.stringify({ session }))
+}
 
-        console.log('after user check')
-        let hashedPassword = await hashPassword(credentials.password as string)
-
-        for (let i = 1; i < 100; i++) {
-          hashedPassword = await hashPassword(hashedPassword)
-        }
-
-        if (user) {
-          if (hashedPassword === user?.password) {
-            console.log('User found')
-            return user
-          } else {
-            console.error('Invalid credentials')
-            return null
-          }
-        } else {
-          console.error('User not found')
-          return null
-        }
-      }
-    })
-  ],
-  adapter: PrismaAdapter(db as any),
-  session: {
-    strategy: 'jwt',
-    maxAge: 10 * 24 * 60 * 60,
-    updateAge: 24 * 60 * 60
-  },
-  callbacks: {
-    async session({ token, session, user }) {
-      if (token) {
-        session.user.id = token?.id || (user?.id as any)
-      }
-      return session
-    },
-    async jwt({ token, user }) {
-      console.log('inside jwt')
-      const dbUser = await db.user.findFirst({
-        where: {
-          userName: token.name
-        }
-      })
-
-      if (!dbUser) {
-        if (user) {
-          token.id = user?.id
-        }
-        return token
-      }
-
-      return {
-        id: dbUser.id,
-        name: dbUser.name,
-        email: dbUser.email,
-        picture: dbUser.image,
-        phone: dbUser.phone,
-        age: dbUser.age,
-        password: dbUser.password
-      }
-    }
-  },
-  pages: {
-    signIn: '/sign-in',
-    error: '/error'
-  }
-})
+export const POST = async () => {
+  // Dummy handler for NextAuth compatibility
+  return new Response(JSON.stringify({ message: 'OK' }))
+}

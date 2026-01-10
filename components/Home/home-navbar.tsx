@@ -14,7 +14,6 @@ import { useState, useEffect, use } from 'react'
 import { ArrowRight, DownloadIcon } from 'lucide-react'
 import { BottomGradient } from '../ui/bottom-gradient'
 import { usePathname, useRouter } from 'next/navigation'
-import { signOut } from 'next-auth/react'
 import { navConfig } from '@/config/constants'
 import LocaleSwitcher from '../Miscellaneous/locale-switcher'
 import { NavbarProps } from '@/lib/types'
@@ -149,16 +148,18 @@ export default function Navbar({
             <LocaleSwitcher />
           </div>
           <ThemeToggle />
-          <Button variant="outline" onClick={() => router.push('/sign-in')}>
+          <Button 
+            variant="outline" 
+            onClick={() => router.push('/sign-in')}
+            className="rounded-2xl border-gray-500 px-4 py-2"
+          >
             {signin}
           </Button>
           <Button
             onClick={() => router.push('/sign-up')}
-            className="hover:bg-primary/80"
+            className="bg-primary text-primary-foreground shadow-md rounded-2xl border border-gray-500 hover:bg-primary/80 px-4 py-2 text-sm whitespace-nowrap"
           >
-            <div className="md:text-[1.6vh] z-10 flex items-center h-11 px-8 bg-primary text-primary-foreground shadow-md rounded-2xl border-gray-500 border">
-              {signup}
-            </div>
+            {signup}
           </Button>
         </div>
       ) : path.includes('/options') ? (
@@ -168,7 +169,7 @@ export default function Navbar({
           </div>
           <ThemeToggle />
           <Button
-            onClick={() => {
+            onClick={async () => {
               toast.loading(
                 locale === 'en' ? 'Signing out...' : 'வெளியேறுகிறது',
                 {
@@ -185,9 +186,12 @@ export default function Navbar({
                   className: 'font-pops'
                 }
               )
-              signOut({
-                callbackUrl: '/'
-              })
+              try {
+                await fetch('/api/auth/logout', { method: 'POST' })
+                router.push('/')
+              } catch (error) {
+                console.error('Logout error:', error)
+              }
             }}
             variant="outline"
             className="rounded-2xl md:text-md border-gray-500 border"
@@ -203,7 +207,7 @@ export default function Navbar({
           </div>
           <ThemeToggle />
           <Button
-            onClick={() => {
+            onClick={async () => {
               toast.loading(
                 locale === 'en' ? 'Signing out...' : 'வெளியேறுகிறது',
                 {
@@ -220,9 +224,12 @@ export default function Navbar({
                   className: 'font-pops'
                 }
               )
-              signOut({
-                callbackUrl: '/'
-              })
+              try {
+                await fetch('/api/auth/logout', { method: 'POST' })
+                router.push('/')
+              } catch (error) {
+                console.error('Logout error:', error)
+              }
             }}
             className=""
             variant="outline"
@@ -231,12 +238,10 @@ export default function Navbar({
           </Button>
           <Button
             onClick={() => router.push('/options')}
-            className="hover:bg-primary/80"
+            className="bg-primary text-primary-foreground shadow-md rounded-2xl border border-gray-500 hover:bg-primary/80 px-4 py-2 text-sm whitespace-nowrap"
           >
-            <div className="md:text-md z-10 flex items-center h-11 px-8 bg-primary text-primary-foreground shadow-md rounded-2xl border-gray-500 border">
-              {explore}
-              <ArrowRight className="size-4 ml-2 hidden md:block" />
-            </div>
+            {explore}
+            <ArrowRight className="size-4 ml-2 hidden md:block" />
           </Button>
         </div>
       )}

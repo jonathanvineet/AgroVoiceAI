@@ -1,12 +1,17 @@
-import { auth } from '@/lib/auth'
+import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
 import { AccountsTab } from '@/components/Form/auth-tab'
 import { Spotlight } from '@/components/ui/spotlight'
 import SessionPageContainer from '@/components/Miscellaneous/no-session-page-container'
 
 export default async function SignInPage() {
-  const session = await auth()
-  if (session?.user) {
+  const supabase = await createServerSupabaseClient()
+  
+  const {
+    data: { user }
+  } = await supabase.auth.getUser()
+
+  if (user) {
     redirect('/options')
   }
 

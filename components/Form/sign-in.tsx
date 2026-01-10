@@ -11,12 +11,9 @@ import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { IconGoogle, IconSpinner } from '../ui/icons'
 import React, { useEffect, useState } from 'react'
-import { signIn } from 'next-auth/react'
-import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import { BottomGradient } from '../ui/bottom-gradient'
-import { handleSubmit } from '@/helpers/user-info'
 import MyToast from '../ui/my-toast'
 import { nameSchema, validateInput } from '@/lib/schema'
 import { z } from 'zod'
@@ -103,62 +100,66 @@ export function Account({
         <form
           onSubmit={async e => {
             e.preventDefault()
+            setIsFieldLoading(true)
             try {
-              nameSchema.parse(name)
-              nameSchema.parse(password)
-              if (!validateInput(name) || !validateInput(password)) {
+              // Validate input
+              if (!name || !password) {
                 MyToast({
                   message:
                     locale === 'en'
-                      ? 'Dont try to inject code. 😒'
-                      : 'குறியீட்டை உட்செலுத்த முயற்சிக்காதீர்கள். 😒',
+                      ? 'Email and password are required'
+                      : 'மின்னஞ்சல் மற்றும் கடவுச்சொல் தேவை',
                   type: 'error'
                 })
                 setIsFieldLoading(false)
+                return
+              }
+
+              // Call sign-in API
+              const response = await fetch('/api/auth/signin', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  email: name,
+                  password: password
+                })
+              })
+
+              const data = await response.json()
+
+              if (response.ok) {
+                MyToast({
+                  message:
+                    locale === 'en'
+                      ? 'Signed in successfully. Redirecting...'
+                      : 'வெற்றிகரமாக உள்நுழைந்துள்ளது. திசைதிருப்புகிறது...',
+                  type: 'success'
+                })
+                setTimeout(() => {
+                  router.push('/options')
+                }, 1500)
               } else {
-                const res = await handleSubmit(
-                  e,
-                  name,
-                  password,
-                  setIsFieldLoading
-                )
-                if (res) {
-                  MyToast({
-                    message:
-                      locale === 'en'
-                        ? 'Signed in successfully. Redirecting...'
-                        : 'வெற்றிகரமாக உள்நுழைந்துள்ளது. திசைதிருப்புகிறது...',
-                    type: 'success'
-                  })
-                  router.push('/onboarding/location')
-                } else {
-                  MyToast({
-                    message:
-                      locale === 'en'
-                        ? 'Invalid credentials. Please try again.'
-                        : 'தவறான சான்றுகள். மீண்டும் முயருங்கள்.',
-                    type: 'error'
-                  })
-                }
+                MyToast({
+                  message:
+                    locale === 'en'
+                      ? data.error || 'Invalid credentials. Please try again.'
+                      : 'தவறான சான்றுகள். மீண்டும் முயருங்கள்.',
+                  type: 'error'
+                })
               }
             } catch (error: any) {
-              if (error instanceof z.ZodError) {
-                MyToast({
-                  message:
-                    locale === 'en'
-                      ? 'Username & Password must contain at least 4 characters.'
-                      : 'பயனர்பெயர் மற்றும் கடவுச்சொல் குறைந்ததும் 4 எழுத்துகள் கொண்டிருக்க வேண்டும்.',
-                  type: 'error'
-                })
-              } else {
-                MyToast({
-                  message:
-                    locale === 'en'
-                      ? 'An error occurred. Please try again later.'
-                      : 'பிழை ஏற்பட்டது. பிறகு முயற்சிக்கவும்.',
-                  type: 'error'
-                })
-              }
+              console.error('Sign in error:', error)
+              MyToast({
+                message:
+                  locale === 'en'
+                    ? 'An error occurred. Please try again later.'
+                    : 'பிழை ஏற்பட்டது. பிறகு முயற்சிக்கவும்.',
+                type: 'error'
+              })
+            } finally {
+              setIsFieldLoading(false)
             }
           }}
           className="grid gap-2"
@@ -170,7 +171,7 @@ export function Account({
             <div className="relative group/btn flex space-x-2 items-center justify-center px-1 w-full  rounded-md h-10 font-medium shadow-input hover:bg-transparent dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]">
               <Input
                 id="name"
-                type="text"
+                type="email"
                 placeholder={placeholder1}
                 value={name}
                 onChange={handleNameChange}

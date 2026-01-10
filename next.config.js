@@ -5,15 +5,22 @@ const withNextIntl = require('next-intl/plugin')()
 const withPWA = require('next-pwa')({
   dest: 'public/en',
   register: true,
-  skipWaiting: true
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development' // Disable PWA in dev to suppress warnings
 })
 
 /** @type {import('next').NextConfig} */
 const config = {
   images: {
-    domains: ['images.unsplash.com'],
     remotePatterns: [
       {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
         hostname: 'firebasestorage.googleapis.com',
         port: '',
         pathname: '**'

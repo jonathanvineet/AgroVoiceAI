@@ -2,13 +2,11 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { DownloadIcon } from 'lucide-react'
 import { BottomGradient } from '../ui/bottom-gradient'
-import { auth } from '@/lib/auth'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
 import DownloadButton from './download-button'
 
 export default async function Home() {
-  const session = await auth()
   const t = await getTranslations('Index')
   const locale = await getLocale()
   return (
