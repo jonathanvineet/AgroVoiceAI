@@ -28,7 +28,7 @@ export const MarketsTab = ({ user }: { user: any }): JSX.Element => {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ location: user?.userDistrict })
+          body: JSON.stringify({ location: user?.user_district })
         })
 
         const fruitsResponse = await fetch('/api/scrape/fruits', {
@@ -36,7 +36,7 @@ export const MarketsTab = ({ user }: { user: any }): JSX.Element => {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ location: user?.userDistrict })
+          body: JSON.stringify({ location: user?.user_district })
         })
 
         if (vegetablesResponse) {

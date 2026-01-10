@@ -49,7 +49,7 @@ export function MarketLocationNotAvailable({
   setItems: React.Dispatch<React.SetStateAction<Item[]>>
   setLocation: React.Dispatch<React.SetStateAction<string>>
 } & { className: string }) {
-  const [district, setDistrict] = useState<string>(user?.userDistrict || '')
+  const [district, setDistrict] = useState<string>(user?.user_district || '')
   const [isDistrictChanged, setIsDistrictChanged] = useState<boolean>(false)
   const [isLoadingDistrict, setIsLoadingDistrict] = useState<boolean>(false)
 
@@ -110,7 +110,7 @@ export function MarketLocationNotAvailable({
   }
 
   function handleDistrictChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setIsDistrictChanged(event.target.value !== user?.userDistrict)
+    setIsDistrictChanged(event.target.value !== user?.user_district)
     setDistrict(event.target.value)
     setIsLoadingDistrict(true)
   }
@@ -136,14 +136,14 @@ export function MarketLocationNotAvailable({
                       defaultValue={
                         district
                           ? district
-                          : user?.userDistrict || 'Select a location.'
+                          : user?.user_district || 'Select a location.'
                       }
                     >
                       <FormControl>
                         <SelectTrigger>
                           <SelectValue
                             placeholder={
-                              district ? district : user?.userDistrict
+                              district ? district : user?.user_district
                             }
                           />
                         </SelectTrigger>

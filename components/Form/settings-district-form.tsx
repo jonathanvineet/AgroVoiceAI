@@ -51,7 +51,7 @@ export function SettingsDistrictForm({
   description,
   save
 }: SettingsProps) {
-  const [district, setDistrict] = useState<string>(user?.userDistrict || '')
+  const [district, setDistrict] = useState<string>(user?.user_district || '')
   const [isDistrictChanged, setIsDistrictChanged] = useState<boolean>(false)
   const [isSavingDistrict, setIsSavingDistrict] = useState<boolean>(false)
 
@@ -61,7 +61,7 @@ export function SettingsDistrictForm({
 
   function handleDistrictChange(event: React.ChangeEvent<HTMLInputElement>) {
     setDistrict(event.target.value)
-    setIsDistrictChanged(event.target.value !== user?.userDistrict)
+    setIsDistrictChanged(event.target.value !== user?.user_district)
   }
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
@@ -74,6 +74,7 @@ export function SettingsDistrictForm({
       setIsDistrictChanged(false)
     })
   }
+
   const locale = useLocale()
   return (
     <Card className="md:w-2/3 w-full border dark:border-green-900/50 border-green-200">
@@ -91,14 +92,14 @@ export function SettingsDistrictForm({
                 <FormItem onChange={handleDistrictChange}>
                   <Select
                     onValueChange={field.onChange}
-                    defaultValue={user?.userDistrict || 'Select your district'}
+                    defaultValue={user?.user_district || 'Select your district'}
                   >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue
                           placeholder={
-                            user?.userDistrict
-                              ? user?.userDistrict
+                            user?.user_district
+                              ? user?.user_district
                               : 'Select your district'
                           }
                         />

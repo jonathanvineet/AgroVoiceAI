@@ -45,7 +45,7 @@ export default function MarketDashBoard({
   setVegetablesData: Dispatch<SetStateAction<Item[]>>
 }) {
   const [location, setLocation] = useState<keyof typeof tnDistrictsInEnglish>(
-    user?.userDistrict || ''
+    user?.user_district || ''
   )
   const [chartData, setChartData] = useState<any[]>([])
   const [dummyData, setDummyData] = useState<any[]>([])
@@ -124,50 +124,106 @@ export default function MarketDashBoard({
 
       console.log('data', responseData.data)
 
+      if (!responseData.data || responseData.data.length === 0) {
+        console.log('No market data available')
+        setChartData([])
+        return
+      }
+
       const formattedData = responseData.data.map(
         (item: {
-          createdAt: { toString: () => string | any[] }
+          created_at?: string
+          createdAt?: string
           name: any
-          marketPrice: number
+          market_price?: number
+          marketPrice?: number
         }) => ({
-          date: item.createdAt.toString().slice(0, 10),
+          date: (item.created_at || item.createdAt || '').toString().slice(0, 10),
           name: item.name,
-          marketPrice: item.marketPrice
+          marketPrice: item.market_price || item.marketPrice || 0
         })
       )
 
       setChartData(formattedData)
 
-      console.log(chartData)
+      console.log('Formatted chart data:', formattedData)
     } catch (error) {
       console.error('Error fetching data:', error)
+      setChartData([])
     }
   }
 
-  let maxValue = findMaxValue(chartData)
-  let minValue = findMinValue(chartData)
+  // Generate realistic mock prices for different items
+  const getMockPriceRange = (item: string): { min: number; max: number; base: number } => {
+    const priceRanges: { [key: string]: { min: number; max: number; base: number } } = {
+      // Vegetables
+      tomato: { min: 20, max: 60, base: 40 },
+      onion: { min: 25, max: 50, base: 35 },
+      potato: { min: 15, max: 40, base: 25 },
+      carrot: { min: 30, max: 70, base: 50 },
+      cabbage: { min: 20, max: 50, base: 35 },
+      cucumber: { min: 20, max: 60, base: 40 },
+      bottlegourd: { min: 15, max: 45, base: 30 },
+      brinjalaubergine: { min: 25, max: 70, base: 50 },
+      ladyfinger: { min: 40, max: 100, base: 70 },
+      spinach: { min: 20, max: 50, base: 35 },
+      cauliflower: { min: 30, max: 80, base: 55 },
+      peas: { min: 60, max: 120, base: 90 },
+      beetroot: { min: 20, max: 50, base: 35 },
+      radish: { min: 10, max: 30, base: 20 },
+      capsicum: { min: 50, max: 150, base: 100 },
+      // Fruits
+      banana: { min: 25, max: 60, base: 40 },
+      apple: { min: 80, max: 200, base: 140 },
+      orange: { min: 40, max: 100, base: 70 },
+      mango: { min: 50, max: 150, base: 100 },
+      papaya: { min: 25, max: 70, base: 50 },
+      pineapple: { min: 40, max: 100, base: 70 },
+      grapes: { min: 80, max: 250, base: 150 },
+      guava: { min: 30, max: 80, base: 55 },
+      watermelon: { min: 200, max: 500, base: 350 },
+      pomegranate: { min: 80, max: 200, base: 140 },
+      amla: { min: 40, max: 100, base: 70 },
+      lemon: { min: 40, max: 120, base: 80 }
+    }
+    return priceRanges[item.toLowerCase().replace(/\s+/g, '')] || { min: 30, max: 80, base: 55 }
+  }
+
+  let maxValue = chartData.length > 0 ? findMaxValue(chartData) : (dummyData.length > 0 ? findMaxValue(dummyData) : 100)
+  let minValue = chartData.length > 0 ? findMinValue(chartData) : (dummyData.length > 0 ? findMinValue(dummyData) : 0)
 
   useEffect(() => {
     if (selectedCategory && selectedItem) {
-      if (chartData) {
-        const dummyData = []
-        for (let i = 12; i >= 0; i--) {
-          dummyData.push({
-            date: new Date(Date.now() - i * 86400000)
-              .toISOString()
-              .slice(0, 10),
-            name: selectedItem,
-            marketPrice:
-              Math.floor(Math.random() * (maxValue - minValue + 1)) +
-              minValue +
-              5
-          })
-        }
-        setDummyData(dummyData)
-        console.log('dummyData', dummyData)
+      const priceRange = getMockPriceRange(selectedItem)
+      const dummyData = []
+      
+      // Generate trending data with some variation
+      let basePrice = priceRange.base
+      for (let i = 12; i >= 0; i--) {
+        // Add some trend (slight increase/decrease)
+        const trend = Math.sin(i / 5) * (priceRange.max - priceRange.min) * 0.1
+        const noise = (Math.random() - 0.5) * (priceRange.max - priceRange.min) * 0.15
+        const price = Math.max(
+          priceRange.min,
+          Math.min(
+            priceRange.max,
+            Math.round(basePrice + trend + noise)
+          )
+        )
+        
+        dummyData.push({
+          date: new Date(Date.now() - i * 86400000)
+            .toISOString()
+            .slice(0, 10),
+          name: selectedItem,
+          marketPrice: price
+        })
       }
+      
+      setDummyData(dummyData)
+      console.log('dummyData', dummyData)
     }
-  }, [chartData, location, selectedCategory, selectedItem])
+  }, [selectedCategory, selectedItem])
 
   if (fruitsError || vegetablesError) {
     return (
@@ -253,17 +309,12 @@ export default function MarketDashBoard({
             value={selectedCategory}
             onChange={e => setSelectedCategory(e.target.value)}
           >
-            <>
-              <option value="vegetables">
-                {locale === 'en' ? 'Vegetables' : 'காய்கறிகள்'}
-              </option>
-              <option value="fruits">
-                {locale === 'en' ? 'Fruits' : 'பழங்கள்'}
-              </option>
-              <div>
-                <IconChevronUpDown className="opacity-50" />
-              </div>
-            </>
+            <option value="vegetables">
+              {locale === 'en' ? 'Vegetables' : 'காய்கறிகள்'}
+            </option>
+            <option value="fruits">
+              {locale === 'en' ? 'Fruits' : 'பழங்கள்'}
+            </option>
           </select>
           <select
             className={cn(
@@ -292,7 +343,7 @@ export default function MarketDashBoard({
 
       <div className="flexl items-center justify-center md:p-0 p-6 mx-auto">
         <div className="flex justify-center md:mt-10 mx-0 max-w-screen">
-          {chartData.length === 0 ? (
+          {!selectedItem ? (
             <div className="flex mx-auto border-dashed w-full md:w-1/2 h-full border-2 rounded-xl border-slate-700 p-10">
               <p className="flex mx-auto text-center py-20 text-lg text-red-600">
                 {locale === 'en'

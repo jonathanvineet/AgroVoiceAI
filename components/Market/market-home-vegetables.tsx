@@ -35,7 +35,7 @@ export default function MarketHomeVegetables({
   setItems
 }: MarketProps) {
   const [location, setLocation] = useState<keyof typeof tnDistrictsInEnglish>(
-    user?.userDistrict
+    user?.user_district
   )
 
   const locale = useLocale()

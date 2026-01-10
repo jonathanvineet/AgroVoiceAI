@@ -12,6 +12,8 @@ import {
   AlertDialog,
   AlertDialogContent,
   AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
   AlertDialogTrigger
 } from '@/components/ui/alert-dialog'
 import { Loader2, User } from 'lucide-react'
@@ -184,6 +186,9 @@ export function SettingsImageForm({
                   </Button>
                 </AlertDialogTrigger>
                 <AlertDialogContent className="">
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>{upload}</AlertDialogTitle>
+                  </AlertDialogHeader>
                   <form onSubmit={event => handleFileUpload(event)}>
                     <div className="mt-10">
                       {imageURL && (

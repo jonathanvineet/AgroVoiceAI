@@ -174,6 +174,9 @@ export default function OnboardingForm({
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="">
+                  <DialogHeader>
+                    <DialogTitle>{upload}</DialogTitle>
+                  </DialogHeader>
                   <form onSubmit={event => handleFileUpload(event)}>
                     <div className="mt-10">
                       {imageURL && (

@@ -50,7 +50,7 @@ export default function MarketHome({ user }: { user: User }) {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ location: user.userDistrict })
+          body: JSON.stringify({ location: user.user_district })
         })
 
         if (response.ok) {
@@ -88,13 +88,13 @@ export default function MarketHome({ user }: { user: User }) {
     <div className="flex flex-col items-center justify-center md:mt-[4rem] mt-[6rem] pb-10">
       <div className="md:w-[60%] 2xl:w-[50%] z-10 p-6">
         <h1 className="2xl:text-5xl text-4xl pb-4 flex sm:flex-row flex-col text-center justify-center items-center bg-clip-text text-transparent bg-gradient-to-r from-green-500 from-10% via-green-500 via-30% to-emerald-500 to-60% font-bold font-pops tracking-tighter mb-4">
-          Today&apos;s Price in {user.userDistrict}
+          Today&apos;s Price in {user.user_district}
           <Tooltip delayDuration={0}>
             <TooltipTrigger>
               <Info className="size-6 sm:ml-4 hidden sm:block sm:mt-0 mt-4 dark:text-white text-black" />
             </TooltipTrigger>
             <TooltipContent className="text-sm font-pops tracking-normal">
-              Daily prices of vegetables in {user.userDistrict}.
+              Daily prices of vegetables in {user.user_district}.
             </TooltipContent>
           </Tooltip>
         </h1>
