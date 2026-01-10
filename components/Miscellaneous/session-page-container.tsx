@@ -17,7 +17,7 @@ export default async function SessionPageContainer({
     redirect('/sign-in')
   }
 
-  if (!user?.pageShown && session) {
+  if (!user?.page_shown && session) {
     redirect('/onboarding/location')
   }
 
@@ -25,7 +25,7 @@ export default async function SessionPageContainer({
 
   return (
     <>
-      {user?.pageShown && session && (
+      {user?.page_shown && session && (
         <div className="min-h-screen w-full items-center justify-center">
           <div className="text-4xl sm:text-7xl min-w-full flex flex-col font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-green-500 to-green-400">
             <div className="min-w-full">

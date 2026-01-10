@@ -18,7 +18,7 @@ export default function Weather({ user }: { user: any }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [location, setLocation] = useState<keyof typeof tnDistrictsInEnglish>(
-    user?.userDistrict
+    user?.user_district
   )
   const [date, setDate] = useState<string>('')
   const locale = useLocale()
@@ -31,7 +31,7 @@ export default function Weather({ user }: { user: any }) {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ location: user?.userDistrict })
+          body: JSON.stringify({ location: user?.user_district })
         })
 
         if (!res.ok) {

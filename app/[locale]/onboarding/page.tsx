@@ -10,7 +10,7 @@ export default async function Onboarding() {
   const session = await auth()
   const user = await getCurrentUser()
   console.log(user)
-  if (user?.pageShown && session) {
+  if (user?.page_shown && session) {
     redirect('/options')
   }
   if (!session?.user?.id) {
@@ -19,7 +19,7 @@ export default async function Onboarding() {
   const t = await getTranslations('Index')
   return (
     <>
-      {!user?.pageShown && (
+      {!user?.page_shown && (
         <div className="flex flex-col justify-center items-center min-h-screen dark:bg-dot-white/[0.2] bg-dot-black/[0.2]">
           {' '}
           <div className="z-40">

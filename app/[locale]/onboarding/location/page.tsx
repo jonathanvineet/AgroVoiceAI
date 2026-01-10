@@ -14,14 +14,14 @@ export default async function OnboardingLocation() {
   }
 
   const users = await getCurrentUser()
-  if (users?.pageShown && session) {
+  if (users?.page_shown && session) {
     redirect('/options')
   }
 
   const t = await getTranslations('Index')
   return (
     <>
-      {!users?.pageShown && (
+      {!users?.page_shown && (
         <div className="flex flex-col mx-6 md:mx-0 justify-center items-center min-h-screen dark:bg-dot-white/[0.2] bg-dot-black/[0.2]">
           {' '}
           <div className="z-40">
