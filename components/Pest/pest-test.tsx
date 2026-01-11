@@ -52,7 +52,7 @@ export default function PestTest({
   drag,
   className
 }: SettingsProps) {
-  const [file, setFile] = useState(null)
+  const [file, setFile] = useState<File | Blob | string | null>(null)
   const [response, setResponse] = useState<any>(null)
   const [image, setImage] = useState<any>(null)
   const [isSavingImage, setIsSavingImage] = useState(false)
@@ -126,10 +126,10 @@ export default function PestTest({
     try {
       // If file is a File object, use it directly. Otherwise, fetch and convert
       let blob: Blob
-      if (file instanceof Blob) {
+      if (file && file instanceof Blob) {
         blob = file
       } else {
-        const response = await fetch(file!)
+        const response = await fetch(file as string)
         blob = await response.blob()
       }
 
@@ -190,7 +190,7 @@ export default function PestTest({
           if (file instanceof Blob) {
             imageToSend = file
           } else {
-            imageToSend = await fetch(file).then(res => res.blob())
+            imageToSend = await fetch(file as string).then(res => res.blob())
           }
         } else {
           // image is always a blob URL from URL.createObjectURL, so fetch it
