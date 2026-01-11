@@ -24,17 +24,13 @@ export async function POST(req: Request) {
       try {
         let fullResponse = ''
         
+        // Use the same model that works in your classify route
         const response = await client.models.generateContentStream({
-          model: 'gemini-2.5-pro',
+          model: 'gemini-2.5-flash',
           contents: messages.map((msg: any) => ({
             role: msg.role === 'user' ? 'user' : 'model',
             parts: [{ text: msg.content }]
-          })),
-          config: {
-            thinkingConfig: {
-              thinkingBudget: -1 // Dynamic thinking
-            }
-          }
+          }))
         })
 
         for await (const chunk of response) {
