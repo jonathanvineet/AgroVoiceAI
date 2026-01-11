@@ -27,14 +27,6 @@ import Link from 'next/link'
 import ReactCrop, { PixelCrop } from 'react-image-crop'
 import 'react-image-crop/dist/ReactCrop.css'
 import {
-  getStorage,
-  ref as reff,
-  uploadBytes,
-  getDownloadURL
-} from 'firebase/storage'
-import { firebaseConfig } from '@/lib/firebase'
-import { initializeApp } from 'firebase/app'
-import {
   handleFeedbackSubmit,
   handleImageSubmit,
   handlePestImageSubmit
@@ -89,9 +81,6 @@ export default function PestTest({
     setCrop(newCrop)
   }
 
-  const firebaseApp = initializeApp(firebaseConfig, 'Pests')
-  const storage = getStorage(firebaseApp)
-
   const handleCropComplete = (croppedArea: any) => {
     const canvas = document.createElement('canvas')
     const imageElement = document.createElement('img')
@@ -135,12 +124,36 @@ export default function PestTest({
   const handleFileUpload = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     try {
-      const fileName = `${Date.now()}.jpeg`
-      const storageRef = reff(storage, 'Pests/' + fileName)
-      const response = await fetch(file!)
-      const blob = await response.blob()
-      await uploadBytes(storageRef, blob)
-      const downloadURL = await getDownloadURL(storageRef)
+      // If file is a File object, use it directly. Otherwise, fetch and convert
+      let blob: Blob
+      if (file instanceof Blob) {
+        blob = file
+      } else {
+        const response = await fetch(file!)
+        blob = await response.blob()
+      }
+
+      // Try to upload via API route to avoid CORS issues
+      const formData = new FormData()
+      formData.append('image', blob, 'pest.jpeg')
+      
+      const uploadResponse = await fetch('/api/upload-pest-image', {
+        method: 'POST',
+        body: formData
+      })
+
+      if (!uploadResponse.ok) {
+        console.warn('[Upload] Firebase upload failed, continuing without it')
+        // Continue without Firebase upload - use local blob URL instead
+        setFeedbackImageURL(image || '')
+        setIsImageUploaded(true)
+        setIsProcessing(true)
+        return true
+      }
+
+      const uploadData = await uploadResponse.json()
+      const downloadURL = uploadData.url
+      
       setFeedbackImageURL(downloadURL)
       await handlePestImageSubmit(
         event,
@@ -153,7 +166,12 @@ export default function PestTest({
       setIsProcessing(true)
       return true
     } catch (error) {
-      return false
+      console.warn('[Upload] Error uploading, continuing without Firebase storage:', error)
+      // Continue without Firebase upload - use local image
+      setFeedbackImageURL(image || '')
+      setIsImageUploaded(true)
+      setIsProcessing(true)
+      return true
     }
   }
 
@@ -168,8 +186,14 @@ export default function PestTest({
       if (uploadResponse) {
         let imageToSend: Blob | undefined
         if (crop?.width && file && crop.height && crop.x && crop.y) {
-          imageToSend = await fetch(file).then(res => res.blob())
+          // If file is a File object, use it directly; otherwise fetch it
+          if (file instanceof Blob) {
+            imageToSend = file
+          } else {
+            imageToSend = await fetch(file).then(res => res.blob())
+          }
         } else {
+          // image is always a blob URL from URL.createObjectURL, so fetch it
           imageToSend = await fetch(image).then(res => res.blob())
         }
         const formData = new FormData()
@@ -190,7 +214,7 @@ export default function PestTest({
             className: 'font-pops'
           }
         )
-        const response = await fetch('http://localhost:5000/classify', {
+        const response = await fetch('/api/classify', {
           method: 'POST',
           body: formData
         })
@@ -333,9 +357,7 @@ export default function PestTest({
                                       height={40}
                                     />
                                   )}
-                                  <button
-                                    type="button"
-                                    disabled={isUploadingImage}
+                                  <div
                                     className="flex w-full flex-col justify-center items-center cursor-auto text-left rounded-md placeholder:text-white  border-2 border-dashed border-gray-500 h-auto bg-transparent px-3 py-2 text-sm ring-offset-background file:border file:bg-transparent file:text-sm file:font-medium  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                   >
                                     <Input
@@ -346,7 +368,7 @@ export default function PestTest({
                                       className="appearance-none w-2/3 m-10 bg-gradient-to-r cursor-pointer from-green-600 from-10% via-green-600 via-30% to-emerald-600 to-60%"
                                       lang="ta"
                                     />
-                                  </button>
+                                  </div>
                                 </div>
                               </div>
                             </CardContent>
@@ -424,7 +446,7 @@ export default function PestTest({
                   open={isFeedbackSubmitted}
                   onOpenChange={setIsFeedbackSubmitted}
                 >
-                  <AlertDialogTrigger>
+                  <AlertDialogTrigger asChild>
                     <Button>
                       {locale === 'en'
                         ? 'Is this correct?'
@@ -465,8 +487,8 @@ export default function PestTest({
                             feedbackImageURL,
                             feedback,
                             answer,
-                            response.confidence,
-                            response.pest,
+                            response?.classification?.confidence || response?.confidence || 'unknown',
+                            response?.classification?.pest_name || response?.pest || 'unknown',
                             setIsFeedbackSuccess,
                             setIsFeedbackLoading
                           )
@@ -590,21 +612,57 @@ export default function PestTest({
                   <span className="mr-2 bg-clip-text font-bricol text-transparent bg-gradient-to-r from-green-500 from-10% via-green-500 via-30% to-emerald-500 to-60% text-4xl font-bold">
                     Pest Name:
                   </span>{' '}
-                  <span className="text-4xl capitalize">{response.pest}</span>
+                  <span className="text-4xl capitalize">
+                    {response?.classification?.pest_name || response?.pest || 'Unknown'}
+                  </span>
                 </p>
               </div>
               <div className="flex-1 px-1 ml-4 space-y-2 overflow-hidden">
-                <MemoizedReactMarkdown
-                  className="prose break-words dark:prose-invert font-bricol prose-p:leading-relaxed prose-pre:p-0"
-                  remarkPlugins={[remarkGfm, remarkMath]}
-                  components={{
-                    p({ children }) {
-                      return <p className="mb-2 last:mb-0">{children}</p>
-                    }
-                  }}
-                >
-                  {response.response}
-                </MemoizedReactMarkdown>
+                <div className="space-y-4">
+                  {response?.classification?.confidence && (
+                    <div>
+                      <strong className="text-green-600">Confidence:</strong>{' '}
+                      <span className="capitalize">{response.classification.confidence}</span>
+                    </div>
+                  )}
+                  {response?.classification?.affected_part && (
+                    <div>
+                      <strong className="text-green-600">Affected Part:</strong>{' '}
+                      {response.classification.affected_part}
+                    </div>
+                  )}
+                  {response?.classification?.severity && (
+                    <div>
+                      <strong className="text-green-600">Severity:</strong>{' '}
+                      <span className="capitalize">{response.classification.severity}</span>
+                    </div>
+                  )}
+                  {response?.classification?.description && (
+                    <div>
+                      <strong className="text-green-600">Description:</strong>{' '}
+                      {response.classification.description}
+                    </div>
+                  )}
+                  {response?.classification?.treatment && (
+                    <div>
+                      <strong className="text-green-600">Treatment:</strong>{' '}
+                      {response.classification.treatment}
+                    </div>
+                  )}
+                </div>
+                {response?.response && (
+                  <MemoizedReactMarkdown
+                    className="prose break-words dark:prose-invert font-bricol prose-p:leading-relaxed prose-pre:p-0 mt-4"
+                    remarkPlugins={[remarkGfm, remarkMath]}
+                    components={{
+                      p({ children }) {
+                        return <p className="mb-2 last:mb-0">{children}</p>
+                      }
+                    }}
+                  >
+                    {response.response}
+                  </MemoizedReactMarkdown>
+                )}
               </div>
             </div>
           </div>

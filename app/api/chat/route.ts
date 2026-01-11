@@ -1,24 +1,10 @@
-import OpenAI from 'openai'
-
 import { auth } from '@/lib/auth'
 import { nanoid } from '@/lib/utils'
 import redis from '@/lib/redis'
+import { GoogleGenAI } from '@google/genai'
 
-import { GoogleGenerativeAI } from '@google/generative-ai'
-import { GoogleGenerativeAIStream, Message, StreamingTextResponse } from 'ai'
-import toast from 'react-hot-toast'
-
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '')
-
-// export const runtime = 'edge';
-
-const buildGoogleGenAIPrompt = (messages: Message[]) => ({
-  contents: messages
-    .filter(message => message.role === 'user' || message.role === 'assistant')
-    .map(message => ({
-      role: message.role === 'user' ? 'user' : 'model',
-      parts: [{ text: message.content }]
-    }))
+const client = new GoogleGenAI({
+  apiKey: process.env.GOOGLE_API_KEY || ''
 })
 
 export async function POST(req: Request) {
@@ -27,45 +13,77 @@ export async function POST(req: Request) {
   const userId = (await auth())?.user.id
 
   if (!userId) {
-    toast.error('You must be logged in to use this feature')
     return new Response('Unauthorized', {
       status: 401
     })
   }
 
-  const geminiStream = await genAI
-    .getGenerativeModel({ model: 'gemini-pro' })
-    .generateContentStream(buildGoogleGenAIPrompt(messages))
-
-  const stream = GoogleGenerativeAIStream(geminiStream, {
-    async onCompletion(completion) {
-      const title = json.messages[0].content.substring(0, 100)
-      const id = json.id ?? nanoid()
-      const createdAt = Date.now()
-      const path = `/chat/c/${id}`
-      const payload = {
-        id,
-        title,
-        userId,
-        createdAt,
-        path,
-        messages: [
-          ...messages,
-          {
-            content: completion,
-            role: 'assistant'
+  const encoder = new TextEncoder()
+  const stream = new ReadableStream({
+    async start(controller) {
+      try {
+        let fullResponse = ''
+        
+        const response = await client.models.generateContentStream({
+          model: 'gemini-2.5-pro',
+          contents: messages.map((msg: any) => ({
+            role: msg.role === 'user' ? 'user' : 'model',
+            parts: [{ text: msg.content }]
+          })),
+          config: {
+            thinkingConfig: {
+              thinkingBudget: -1 // Dynamic thinking
+            }
           }
-        ]
-      }
-      if ((await auth())?.user.id) {
-        await redis.hmset(`chat:${id}`, payload)
-        await redis.zadd(`user:chat:${userId}`, {
-          score: createdAt,
-          member: `chat:${id}`
         })
+
+        for await (const chunk of response) {
+          const text = chunk.text || ''
+          if (text) {
+            fullResponse += text
+            controller.enqueue(encoder.encode(text))
+          }
+        }
+
+        // Save to Redis after completion
+        const title = json.messages[0].content.substring(0, 100)
+        const id = json.id ?? nanoid()
+        const createdAt = Date.now()
+        const path = `/chat/c/${id}`
+        const payload = {
+          id,
+          title,
+          userId,
+          createdAt,
+          path,
+          messages: [
+            ...messages,
+            {
+              content: fullResponse,
+              role: 'assistant'
+            }
+          ]
+        }
+
+        if (userId) {
+          await redis.hmset(`chat:${id}`, payload)
+          await redis.zadd(`user:chat:${userId}`, {
+            score: createdAt,
+            member: `chat:${id}`
+          })
+        }
+
+        controller.close()
+      } catch (error) {
+        console.error('[Chat] Error:', error)
+        controller.error(error)
       }
     }
   })
 
-  return new StreamingTextResponse(stream)
+  return new Response(stream, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8'
+    }
+  })
 }
