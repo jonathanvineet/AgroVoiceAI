@@ -54,12 +54,7 @@ export function Chat({ id, initialMessages, className, session }: ChatProps) {
       },
       onFinish() {
         if (!path.includes('chat/c') && session?.user.id) {
-          router.refresh()
-          router.push(`chat/c/${id}`)
-          router.refresh()
-          router.push(`chat/c/${id}`)
-        } else {
-          // router.refresh()
+          router.push(`/chat/c/${id}`)
         }
       }
     })

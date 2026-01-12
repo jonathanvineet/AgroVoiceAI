@@ -23,6 +23,21 @@ export async function POST(req: Request) {
     async start(controller) {
       try {
         let fullResponse = ''
+        const processingKey = `user:chat:processing:${userId}`
+
+        // Acquire a per-user lock to prevent concurrent requests from the same user
+        // This avoids multiple simultaneous model calls when the client retries
+        const lock = await redis.set(processingKey, '1', {
+          ex: 60,
+          nx: true
+        })
+
+        if (!lock) {
+          // Inform client another request is in progress
+          controller.enqueue(encoder.encode('[Error] Another request is in progress.'))
+          controller.close()
+          return
+        }
         
         // Use the same model that works in your classify route
         const response = await client.models.generateContentStream({
@@ -69,10 +84,33 @@ export async function POST(req: Request) {
           })
         }
 
+        // Release lock
+        try {
+          await redis.del(processingKey)
+        } catch (e) {
+          console.warn('[Chat] Failed to release lock:', e)
+        }
+
         controller.close()
-      } catch (error) {
+      } catch (error: any) {
         console.error('[Chat] Error:', error)
-        controller.error(error)
+        
+        // Release lock
+        try {
+          const processingKey = `user:chat:processing:${userId}`
+          await redis.del(processingKey)
+        } catch (e) {
+          console.warn('[Chat] Failed to release lock after error:', e)
+        }
+
+        // Check for rate limit / quota errors and close stream gracefully
+        const errorMsg = error?.message || ''
+        if (errorMsg.includes('429') || errorMsg.includes('quota') || errorMsg.includes('RESOURCE_EXHAUSTED')) {
+          controller.enqueue(encoder.encode('[RATE_LIMIT] You have exceeded your API quota. Please try again later.'))
+        } else {
+          controller.enqueue(encoder.encode(`[ERROR] ${error?.message || 'Unknown error'}`))
+        }
+        controller.close()
       }
     }
   })
