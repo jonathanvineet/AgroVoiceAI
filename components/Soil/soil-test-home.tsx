@@ -1,5 +1,4 @@
 'use client'
-import { getDatabase, ref, onValue, set } from 'firebase/database'
 import { useState, useEffect, MouseEvent } from 'react'
 import { useLocale } from 'next-intl'
 import { cn } from '@/lib/utils'
@@ -7,7 +6,6 @@ import { Card } from '../ui/card'
 import { LoadingDots } from '../ui/loading-dots'
 import { Button } from '../ui/button'
 import { useRouter } from 'next/navigation'
-import { app } from '@/lib/firebase'
 import MyToast from '../ui/my-toast'
 import { cropInEnglish, cropInTamil } from '@/config/constants'
 import { useChat, type Message } from 'ai/react'
@@ -21,12 +19,17 @@ import { Mic } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip'
 
 type SoilTestData = {
-  K: number
-  N: number
-  P: number
-  humidity: number
+  K?: number
+  potassium?: number
+  N?: number
+  nitrogen?: number
+  P?: number
+  phosphorus?: number
+  humidity?: number
+  moisture?: number
   ph: number
-  electrical_conductivity: number
+  electrical_conductivity?: number
+  ec?: number
   temperature: number
 }
 
@@ -40,24 +43,47 @@ export default function SoilTest({ user }: any) {
   const router = useRouter()
   const fetchData = async () => {
     setLoading(true)
-    const database = getDatabase(app)
-    const soilDataRef = ref(database, 'Soiltest/aaaa')
-
-    onValue(
-      soilDataRef,
-      snapshot => {
-        const data = snapshot.val()
-        const updatedData = {
-        ...data,
-        rainfall: 230
-      };
-      setData(updatedData);
-      setLoading(false)
-      },
-      {
-        onlyOnce: true
+    try {
+      const res = await fetch('/api/soil-data', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      const apiData = await res.json()
+      
+      if (apiData.data) {
+        // Transform API data to match component structure
+        const transformedData: SoilTestData = {
+          N: apiData.data?.nitrogen || 0,
+          nitrogen: apiData.data?.nitrogen || 0,
+          P: apiData.data?.phosphorus || 0,
+          phosphorus: apiData.data?.phosphorus || 0,
+          K: apiData.data?.potassium || 0,
+          potassium: apiData.data?.potassium || 0,
+          humidity: apiData.data?.moisture || 0,
+          moisture: apiData.data?.moisture || 0,
+          ph: apiData.data?.ph || 6.5,
+          ec: apiData.data?.ec || 1500,
+          electrical_conductivity: apiData.data?.ec || 1500,
+          temperature: apiData.data?.temperature || 28
+        }
+        
+        setData(transformedData)
+      } else {
+        MyToast({
+          message: locale === 'en' ? 'No soil data received yet' : 'மண் தரவு இன்னும் பெறப்படவில்லை',
+          type: 'info'
+        })
       }
-    )
+    } catch (e) {
+      MyToast({
+        message: locale === 'en' ? 'Error fetching soil data' : 'மண் தரவு பெறுவதில் பிழை',
+        type: 'error'
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -178,7 +204,7 @@ export default function SoilTest({ user }: any) {
           <div className="p-6 flex justify-center mx-auto">
             <LoadingDots className="bg-gradient-to-r size-3 from-green-500 from-10% via-green-500 via-30% to-emerald-500 to-60%" />
           </div>
-        ) : !data?.K ? (
+        ) : !data?.K && !data?.potassium ? (
           <div className=" text-xl mx-auto text-red-600">
             {locale === 'en' ? (
               <div className="flex flex-col mx-auto p-6 text-center">
@@ -357,7 +383,7 @@ export default function SoilTest({ user }: any) {
                     ? 'Potassium Value: '
                     : 'பொட்டாசியம் மதிப்பு:'}{' '}
                 </span>
-                {data?.K}
+                {data?.K || data?.potassium || 'N/A'} mg/kg
               </p>{' '}
               <p
                 className={cn(
@@ -367,7 +393,7 @@ export default function SoilTest({ user }: any) {
                 <span>
                   {locale === 'en' ? 'Nitrogen Value: ' : 'நைட்ரஜன் மதிப்பு:'}{' '}
                 </span>
-                {data?.N} mg/kg
+                {data?.N || data?.nitrogen || 'N/A'} mg/kg
               </p>
             </div>
             <div className="flex sm:flex-row flex-col w-full justify-between sm:space-x-4 p-4">
@@ -381,7 +407,7 @@ export default function SoilTest({ user }: any) {
                     ? 'Phosphorus Value: '
                     : 'பாஸ்பரஸ் மதிப்பு: '}
                 </span>
-                {data?.P} mg/kg
+                {data?.P || data?.phosphorus || 'N/A'} mg/kg
               </p>{' '}
               <p
                 className={cn(
@@ -399,7 +425,7 @@ export default function SoilTest({ user }: any) {
                 )}
               >
                 <span>{locale === 'en' ? 'Humidity: ' : 'ஈரப்பதம்: '}</span>
-                {data?.humidity}
+                {data?.humidity || data?.moisture || 'N/A'}
               </p>{' '}
               <p
                 className={cn(
@@ -411,7 +437,7 @@ export default function SoilTest({ user }: any) {
                     ? 'Electrical Conductivity: '
                     : 'மின் கடத்துத்திறன்: '}
                 </span>
-                {data?.electrical_conductivity} S/m
+                {data?.electrical_conductivity || data?.ec || 'N/A'} S/m
               </p>
             </div>
             <div className="flex w-full mx-auto justify-center p-4">

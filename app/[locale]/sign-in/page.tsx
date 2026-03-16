@@ -7,12 +7,17 @@ import SessionPageContainer from '@/components/Miscellaneous/no-session-page-con
 export default async function SignInPage() {
   const supabase = await createServerSupabaseClient()
   
-  const {
-    data: { user }
-  } = await supabase.auth.getUser()
+  try {
+    const {
+      data: { user }
+    } = await supabase.auth.getUser()
 
-  if (user) {
-    redirect('/options')
+    if (user) {
+      redirect('/options')
+    }
+  } catch (error) {
+    // Expected error when no session exists
+    // User will see the sign-in form
   }
 
   return <SessionPageContainer component={<AccountsTab />} />
