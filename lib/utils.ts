@@ -102,20 +102,40 @@ export function parseItems(scrapedData: string[]): Item[] {
 
   for (const entry of scrapedData) {
     if (entry.trim() !== '') {
-      const parts = entry.split(',')
-      const name = parts.slice(0, -4).join(',').trim()
-      const unit = parts[parts.length - 4].trim()
-      const marketPrice = parts[parts.length - 3].trim()
-      const retailPrice = parts[parts.length - 2].trim()
-      const mallPrice = parts[parts.length - 1].trim()
+      const parts = entry.split(',').map(p => p.trim())
 
-      items.push({
-        name,
-        unit,
-        marketPrice,
-        retailPrice,
-        mallPrice
-      })
+      // Defensive parsing: many market tables vary in column count.
+      // Preferred format: [...nameParts, unit, marketPrice, retailPrice, mallPrice]
+      const n = parts.length
+      let name = ''
+      let unit = ''
+      let marketPrice = ''
+      let retailPrice = ''
+      let mallPrice = ''
+
+      if (n >= 5) {
+        name = parts.slice(0, n - 4).join(',')
+        unit = parts[n - 4]
+        marketPrice = parts[n - 3]
+        retailPrice = parts[n - 2]
+        mallPrice = parts[n - 1]
+      } else if (n === 4) {
+        name = parts[0]
+        unit = parts[1]
+        marketPrice = parts[2]
+        retailPrice = parts[3]
+      } else if (n === 3) {
+        name = parts[0]
+        marketPrice = parts[1]
+        retailPrice = parts[2]
+      } else if (n === 2) {
+        name = parts[0]
+        marketPrice = parts[1]
+      } else {
+        name = parts.join(',')
+      }
+
+      items.push({ name, unit, marketPrice, retailPrice, mallPrice })
     }
   }
 

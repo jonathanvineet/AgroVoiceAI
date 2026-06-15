@@ -28,19 +28,29 @@ function scrapeDataFromTables(response:any) {
 export async function POST(req: NextRequest) {
   try {
     const { location } = await req.json()
+    if (!location) {
+      return NextResponse.json({ message: 'Missing location parameter' }, { status: 400 })
+    }
+
     const websiteUrl: string = `https://market.todaypricerates.com/${location}-vegetables-price-in-Tamil-Nadu`
     // 'https://market.todaypricerates.com/${location}-vegetables-price-in-Tamil-Nadu'
     // 'https://market.todaypricerates.com/fruits-daily-price'
     const response = await axios.get(websiteUrl)
 
+    console.debug('[Scrape] Requested URL:', websiteUrl, 'Status:', response.status, 'BodyLength:', response.data?.length)
     if (response.status === 200) {
       const scrapedData = scrapeDataFromTables(response)
 
+      if (!scrapedData || scrapedData.length === 0) {
+        return NextResponse.json({ scrapedData, debug: { websiteUrl, status: response.status, bodyLength: response.data?.length || 0 } })
+      }
+
       return NextResponse.json({ scrapedData })
     } else {
-      return NextResponse.json({ message: 'Failed to retrieve the webpage.' })
+      return NextResponse.json({ message: 'Failed to retrieve the webpage.', status: response.status })
     }
   } catch (error: any) {
+    console.warn('[Scrape] Error fetching:', error)
     return NextResponse.json({ message: error.message })
   }
 }

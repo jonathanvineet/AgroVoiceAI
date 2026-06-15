@@ -167,7 +167,14 @@ export async function deleteAccount() {
 }
 
 export async function getChat(id: string, userId: string) {
-  const chat = await redis.hgetall<Chat>(`chat:${id}`)
+  let chat: Chat | null = null
+
+  try {
+    chat = await redis.hgetall<Chat>(`chat:${id}`)
+  } catch (error) {
+    console.warn('[Actions] Failed to load chat from Redis:', error)
+    return null
+  }
 
   if (!chat || (userId && chat.userId !== userId)) {
     return null
@@ -231,7 +238,14 @@ export async function clearChats() {
 }
 
 export async function getSharedChat(id: string) {
-  const chat = await redis.hgetall<Chat>(`chat:${id}`)
+  let chat: Chat | null = null
+
+  try {
+    chat = await redis.hgetall<Chat>(`chat:${id}`)
+  } catch (error) {
+    console.warn('[Actions] Failed to load shared chat from Redis:', error)
+    return null
+  }
 
   if (!chat || !chat.sharePath) {
     return null

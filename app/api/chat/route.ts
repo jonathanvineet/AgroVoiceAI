@@ -32,22 +32,31 @@ export async function POST(req: Request) {
   const encoder = new TextEncoder()
   const stream = new ReadableStream({
     async start(controller) {
+      let processingKey: string | null = null
+      let lockAcquired = false
       try {
         let fullResponse = ''
-        const processingKey = `user:chat:processing:${userId}`
+        processingKey = `user:chat:processing:${userId}`
 
         // Acquire a per-user lock to prevent concurrent requests from the same user
         // This avoids multiple simultaneous model calls when the client retries
-        const lock = await redis.set(processingKey, '1', {
-          ex: 60,
-          nx: true
-        })
+        try {
+          const lock = await redis.set(processingKey, '1', {
+            ex: 60,
+            nx: true
+          })
 
-        if (!lock) {
-          // Inform client another request is in progress
-          controller.enqueue(encoder.encode('[Error] Another request is in progress.'))
-          controller.close()
-          return
+          if (!lock) {
+            // Inform client another request is in progress
+            controller.enqueue(encoder.encode('[Error] Another request is in progress.'))
+            controller.close()
+            return
+          }
+
+          lockAcquired = true
+        } catch (lockError) {
+          // Redis is treated as an optional cache layer; continue chat generation.
+          console.warn('[Chat] Failed to acquire Redis lock. Continuing without lock:', lockError)
         }
         
         try {
@@ -102,18 +111,24 @@ export async function POST(req: Request) {
         }
 
         if (userId) {
-          await redis.hmset(`chat:${id}`, payload)
-          await redis.zadd(`user:chat:${userId}`, {
-            score: createdAt,
-            member: `chat:${id}`
-          })
+          try {
+            await redis.hmset(`chat:${id}`, payload)
+            await redis.zadd(`user:chat:${userId}`, {
+              score: createdAt,
+              member: `chat:${id}`
+            })
+          } catch (persistError) {
+            console.warn('[Chat] Failed to persist chat to Redis:', persistError)
+          }
         }
 
         // Release lock
-        try {
-          await redis.del(processingKey)
-        } catch (e) {
-          console.warn('[Chat] Failed to release lock:', e)
+        if (lockAcquired && processingKey) {
+          try {
+            await redis.del(processingKey)
+          } catch (e) {
+            console.warn('[Chat] Failed to release lock:', e)
+          }
         }
 
         controller.close()
@@ -121,11 +136,12 @@ export async function POST(req: Request) {
         console.error('[Chat] Error:', error)
         
         // Release lock
-        try {
-          const processingKey = `user:chat:processing:${userId}`
-          await redis.del(processingKey)
-        } catch (e) {
-          console.warn('[Chat] Failed to release lock after error:', e)
+        if (lockAcquired && processingKey) {
+          try {
+            await redis.del(processingKey)
+          } catch (e) {
+            console.warn('[Chat] Failed to release lock after error:', e)
+          }
         }
 
         // Check for rate limit / quota errors and close stream gracefully
