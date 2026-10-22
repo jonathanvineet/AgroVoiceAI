@@ -21,14 +21,7 @@ import toast from 'react-hot-toast'
 import { useDropzone } from 'react-dropzone'
 import { handleImageSubmit } from '@/helpers/user-info'
 import { removeImage } from '@/app/actions'
-import {
-  getStorage,
-  ref as reff,
-  uploadBytes,
-  getDownloadURL
-} from 'firebase/storage'
-import { firebaseConfig } from '@/lib/firebase'
-import { initializeApp } from 'firebase/app'
+import { uploadImage } from '@/lib/upload-client'
 import useLockBody from '@/lib/hooks/use-lock-body'
 import { useRouter } from 'next/navigation'
 import MyToast from '../ui/my-toast'
@@ -59,8 +52,6 @@ export function SettingsImageForm({
   const [isUploaded, setIsUploaded] = useState<boolean>(true)
   const locale = useLocale()
 
-  const firebaseApp = initializeApp(firebaseConfig, 'profile')
-  const storage = getStorage(firebaseApp)
   const router = useRouter()
 
   useLockBody(modalVisible)
@@ -79,17 +70,20 @@ export function SettingsImageForm({
     async (acceptedFiles: File[]) => {
       setIsUploadingImage(true)
       const file = acceptedFiles[0]
-      const fileName = `${Date.now()}_${file.name}`
-      const storageRef = reff(storage, 'Profile/' + fileName)
       toast.loading('Please wait...')
-      await uploadBytes(storageRef, file)
-      const downloadURL = await getDownloadURL(storageRef)
-      setImageURL(downloadURL)
-      toast.dismiss()
+      try {
+        setImageURL(await uploadImage(file, 'avatars'))
+      } catch (error) {
+        MyToast({ message: 'Image upload failed.', type: 'error' })
+        setIsUploadingImage(false)
+        return
+      } finally {
+        toast.dismiss()
+      }
       setIsUploaded(false)
       setIsUploadingImage(false)
     },
-    [storage]
+    []
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

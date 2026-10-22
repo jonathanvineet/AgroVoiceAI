@@ -1,7 +1,7 @@
 import createMiddleware from 'next-intl/middleware'
 import { pathnames, locales, localePrefix } from './config'
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { createServerClient } from '@supabase/ssr'
+import { type NextRequest } from 'next/server'
 
 const intlMiddleware = createMiddleware({
   defaultLocale: 'en',
@@ -10,13 +10,22 @@ const intlMiddleware = createMiddleware({
   localePrefix
 })
 
+// Mirrors lib/backend.ts (kept inline: middleware runs on the edge runtime).
+function useSupabase() {
+  if (process.env.DATA_BACKEND === 'local') return false
+  return Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL &&
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY &&
+      process.env.SUPABASE_SERVICE_ROLE_KEY
+  )
+}
+
 export async function middleware(request: NextRequest) {
-  // Run i18n middleware
-  const intlResponse = intlMiddleware(request)
+  const response = intlMiddleware(request)
 
-  // Refresh session for Supabase SSR
-  let supabaseResponse = intlResponse
+  if (!useSupabase()) return response
 
+  // Refresh the Supabase SSR session cookie.
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -27,21 +36,22 @@ export async function middleware(request: NextRequest) {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            supabaseResponse.cookies.set(name, value, options)
+            response.cookies.set(name, value, options)
           })
         }
       }
     }
   )
 
-  // Refresh user session
-  await supabase.auth.getUser()
+  try {
+    await supabase.auth.getUser()
+  } catch (error) {
+    // Supabase unreachable: keep serving pages, the session just isn't refreshed.
+  }
 
-  return supabaseResponse
+  return response
 }
 
 export const config = {
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ]
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
 }

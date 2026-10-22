@@ -103,13 +103,11 @@ export default function SoilTest({ user }: any) {
     append
   } = useChat({ api: '/api/soil-test-chat' })
 
-  const server = process.env.NEXT_PUBLIC_SOIL_TEST_SERVER_URL!
-
   const handleSoilSubmit = async (e: any) => {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch(server, {
+      const res = await fetch('/api/crop-recommend', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -271,21 +269,21 @@ export default function SoilTest({ user }: any) {
                   e.preventDefault()
                   setInput('')
                   setChatLoading(true)
+                  const question = input.trim()
+                  const crop =
+                    locale === 'en'
+                      ? cropInEnglish[recommendation as unknown as keyof typeof cropInEnglish]
+                      : cropInTamil[recommendation as unknown as keyof typeof cropInTamil]
                   await append({
-                    id: '1',
                     content:
                       locale === 'en'
-                        ? `The user does a soil test(NPK sensor) and i am sending it to my server to get the right crop for their soil. Now i want you to more about the crop ${
-                            cropInEnglish[
-                              recommendation as unknown as keyof typeof cropInEnglish
-                            ]
-                          } and how to grow it`
-                        : `பயனர் ஒரு மண் பரிசோதனை(NPK sensor) செய்கிறார், நான் அதை எனது சேவையகத்திற்கு அனுப்பி அவர்களின் மண்ணுக்கு சரியான பயிரைப் பெறுகிறேன். இப்போது நீங்கள்  ${
-                            cropInTamil[
-                              recommendation as unknown as keyof typeof cropInTamil
-                            ]
-                          } பயிர் மற்றும் அதை எவ்வாறு வளர்ப்பது என்பது பற்றி மேலும் அறிய விரும்புகிறேன்`,
-                    role: 'system'
+                        ? question
+                          ? `${question} (recommended crop from my soil test: ${crop})`
+                          : `My soil test recommends ${crop}. How do I grow it?`
+                        : question
+                          ? `${question} (என் மண் பரிசோதனை பரிந்துரைத்த பயிர்: ${crop})`
+                          : `என் மண் பரிசோதனை ${crop} பயிரைப் பரிந்துரைக்கிறது. அதை எப்படி வளர்ப்பது?`,
+                    role: 'user'
                   })
                   setChatLoading(false)
                 }}

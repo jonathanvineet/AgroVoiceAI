@@ -1,12 +1,33 @@
 import { createServerSupabaseClient } from './supabase-server'
+import { getBackend } from './backend'
+import { getLocalSessionUserId, getLocalUser } from './local-auth'
+
+export type Session = {
+  user: {
+    id: string
+    email?: string
+    name?: string
+    image?: string | null
+  }
+}
 
 /**
- * Get the current user session using Supabase
- * This is a compatibility layer for existing code that imports from @/lib/auth
- * 
- * Returns the Supabase user object or null if not authenticated
+ * Get the current user session.
+ * Supabase backend: reads the Supabase auth cookie.
+ * Local backend: reads the signed `agrovoice_session` cookie.
+ *
+ * Returns null if not authenticated.
  */
-export async function auth() {
+export async function auth(): Promise<Session | null> {
+  if (getBackend() === 'local') {
+    const id = getLocalSessionUserId()
+    const user = id ? getLocalUser(id) : null
+    if (!user) return null
+    return {
+      user: { id: user.id, email: user.email, name: user.name, image: null }
+    }
+  }
+
   try {
     const supabase = await createServerSupabaseClient()
     const {
@@ -15,11 +36,13 @@ export async function auth() {
     } = await supabase.auth.getUser()
 
     if (error) {
-      console.error('Auth error:', error)
+      // "Auth session missing" is the normal signed-out state.
+      if (error.name !== 'AuthSessionMissingError') {
+        console.error('Auth error:', error.message)
+      }
       return null
     }
 
-    // Return a user object compatible with existing code
     if (user) {
       return {
         user: {
@@ -39,12 +62,14 @@ export async function auth() {
 }
 
 export const GET = async () => {
-  // Dummy handler for NextAuth compatibility
   const session = await auth()
-  return new Response(JSON.stringify({ session }))
+  return new Response(JSON.stringify({ session }), {
+    headers: { 'Content-Type': 'application/json' }
+  })
 }
 
 export const POST = async () => {
-  // Dummy handler for NextAuth compatibility
-  return new Response(JSON.stringify({ message: 'OK' }))
+  return new Response(JSON.stringify({ message: 'OK' }), {
+    headers: { 'Content-Type': 'application/json' }
+  })
 }

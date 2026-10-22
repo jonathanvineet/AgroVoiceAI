@@ -1,15 +1,11 @@
-import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { CreateAccount } from '@/components/Form/sign-up'
 import NoSessionPageContainer from '@/components/Miscellaneous/no-session-page-container'
 import { getTranslations } from 'next-intl/server'
 
 export default async function SignUpPage() {
-  const supabase = await createServerSupabaseClient()
-  
-  const {
-    data: { user }
-  } = await supabase.auth.getUser()
+  const user = (await auth())?.user
 
   if (user) {
     redirect('/options')

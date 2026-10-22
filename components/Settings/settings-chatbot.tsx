@@ -31,14 +31,14 @@ export function SettingsChatbot({
 }: SettingsProps) {
   const [isSavingPref, setIsSavingPref] = useState<boolean>(false)
   const [isPreferenceChanged, setIsPreferenceChanged] = useState<boolean>(false)
-  const [preference, setPreference] = useState(user?.chatbotPreference || '')
+  const [preference, setPreference] = useState(user?.chatbot_preference || '')
 
   const router = useRouter()
   const locale = useLocale()
 
   const handlePrefChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setPreference(event.target.value)
-    setIsPreferenceChanged(event.target.value !== user?.chatbotPreference)
+    setIsPreferenceChanged(event.target.value !== user?.chatbot_preference)
   }
 
   const [isMicrophoneActive, setIsMicrophoneActive] = useState<boolean>(false)

@@ -12,18 +12,13 @@ import {
   DialogClose,
   DialogContent,
   DialogFooter,
+  DialogHeader,
+  DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog'
 import { useDropzone } from 'react-dropzone'
 import { handleImageSubmit, handleNameSubmit } from '@/helpers/user-info'
-import {
-  getStorage,
-  ref as reff,
-  uploadBytes,
-  getDownloadURL
-} from 'firebase/storage'
-import { firebaseConfig } from '@/lib/firebase'
-import { initializeApp } from 'firebase/app'
+import { uploadImage } from '@/lib/upload-client'
 import { removeImage } from '@/app/actions'
 import MyToast from '../ui/my-toast'
 import { OnboardingFormProps } from '@/lib/types'
@@ -55,8 +50,6 @@ export default function OnboardingForm({
   const [isUploadingImage, setIsUploadingImage] = useState(false)
   const [next, setNext] = useState(false)
 
-  const firebaseApp = initializeApp(firebaseConfig, 'profile')
-  const storage = getStorage(firebaseApp)
   const router = useRouter()
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,17 +66,20 @@ export default function OnboardingForm({
     async (acceptedFiles: File[]) => {
       setIsUploadingImage(true)
       const file = acceptedFiles[0]
-      const fileName = `${Date.now()}_${file.name}`
-      const storageRef = reff(storage, 'Profile/' + fileName)
       toast.loading('Please wait...')
-      await uploadBytes(storageRef, file)
-      const downloadURL = await getDownloadURL(storageRef)
-      setImageURL(downloadURL)
-      toast.dismiss()
+      try {
+        setImageURL(await uploadImage(file, 'avatars'))
+      } catch (error) {
+        MyToast({ message: 'Image upload failed.', type: 'error' })
+        setIsUploadingImage(false)
+        return
+      } finally {
+        toast.dismiss()
+      }
       setIsUploaded(false)
       setIsUploadingImage(false)
     },
-    [storage]
+    []
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

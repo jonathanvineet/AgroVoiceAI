@@ -1,30 +1,17 @@
-import { createAdminSupabaseClient } from '@/lib/supabase-server'
+import { getPriceHistory } from '@/lib/data'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
   try {
     const { district, item, type } = await req.json()
-
-    console.log('Fetching market prices for district:', district, 'type', type, 'item:', item)
-
-    const supabase = createAdminSupabaseClient()
-    const { data, error } = await supabase
-      .from('market_prices')
-      .select('*')
-      .eq('district', district)
-      .eq('name', item)
-      .eq('type', type)
-      .order('created_at', { ascending: true })
-
-    if (error) {
-      console.error('Supabase error:', error)
+    if (!district || !item || !type) {
       return NextResponse.json(
-        { data: [], message: 'Failed to fetch market prices' },
-        { status: 500 }
+        { data: [], message: 'district, item and type are required' },
+        { status: 400 }
       )
     }
-
-    return NextResponse.json({ data: data || [] })
+    const data = await getPriceHistory(district, item, type)
+    return NextResponse.json({ data })
   } catch (error: any) {
     console.error('Error fetching market prices:', error.message)
     return NextResponse.json(

@@ -36,7 +36,7 @@ export default function OnboardingPreferenceForm({
 }: OnboardingFormProps) {
   const [isSavingPref, setIsSavingPref] = useState<boolean>(false)
   const [isPreferenceChanged, setIsPreferenceChanged] = useState<boolean>(false)
-  const [preference, setPreference] = useState(user?.chatbotPreference || '')
+  const [preference, setPreference] = useState(user?.chatbot_preference || '')
   const [next, setNext] = useState(false)
 
   const router = useRouter()
@@ -47,7 +47,7 @@ export default function OnboardingPreferenceForm({
 
   const handlePrefChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setPreference(event.target.value)
-    setIsPreferenceChanged(event.target.value !== user?.chatbotPreference)
+    setIsPreferenceChanged(event.target.value !== user?.chatbot_preference)
   }
 
   const [isMicrophoneActive, setIsMicrophoneActive] = useState<boolean>(false)

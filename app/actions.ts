@@ -5,9 +5,11 @@ import { redirect } from 'next/navigation'
 
 import { auth } from '@/lib/auth'
 import { type Chat } from '@/lib/types'
-import { createServerSupabaseClient, createAdminSupabaseClient } from '@/lib/supabase-server'
+import { createAdminSupabaseClient } from '@/lib/supabase-server'
+import { getBackend } from '@/lib/backend'
+import { clearSessionCookie, deleteLocalUser } from '@/lib/local-auth'
+import { deleteProfile, getProfile, updateProfile } from '@/lib/data'
 import redis from '@/lib/redis'
-import { NextResponse } from 'next/server'
 
 export async function getChats(userId?: string | null) {
   if (!userId) {
@@ -15,80 +17,47 @@ export async function getChats(userId?: string | null) {
   }
 
   try {
-    const pipeline = redis.pipeline()
     const chats: string[] = await redis.zrange(`user:chat:${userId}`, 0, -1, {
       rev: true
     })
-
-    for (const chat of chats) {
-      pipeline.hgetall(chat)
-    }
-
-    const results = await pipeline.exec()
-
-    return results as Chat[]
+    const results = await Promise.all(chats.map(chat => redis.hgetall<Chat>(chat)))
+    return results.filter(Boolean) as Chat[]
   } catch (error) {
     return []
   }
 }
+
 export async function getUser() {
   const session = await auth()
 
   return session?.user
 }
 
-export async function updatePageShown(userId: string) {
-  const supabase = createAdminSupabaseClient()
-  const { error } = await supabase
-    .from('profiles')
-    .update({ page_shown: true })
-    .eq('id', userId)
-  
+export async function updatePageShown(userId?: string) {
+  // Always trust the session, never the client-supplied id.
+  const id = await getUserId()
+  if (!id || (userId && userId !== id)) return
+  const { error } = await updateProfile(id, { page_shown: true })
   if (error) {
     console.error('Error updating pageShown:', error)
   }
 }
 
 export async function getLocation() {
-  const userId = await getUserId()
-  if (!userId) return []
-  
-  const supabase = createAdminSupabaseClient()
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('user_district')
-    .eq('id', userId)
-  
-  if (error) {
-    console.error('Error getting location:', error)
-    return []
-  }
-  
-  return data || []
+  const user = await getCurrentUser()
+  return user ? [{ user_district: user.user_district }] : []
 }
 
 export async function getCurrentUser() {
   const id = await getUserId()
   if (!id) return null
-  
-  const supabase = createAdminSupabaseClient()
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', id)
-  
-  if (error) {
-    console.error('Error getting current user:', error)
-    return null
-  }
-  
-  // Handle case where user doesn't exist yet (returns empty array)
-  if (!data || data.length === 0) {
+
+  const profile = await getProfile(id)
+  if (!profile) {
     console.log('Profile not found for user:', id, '- returning null')
     return null
   }
-  
-  return data[0]
+  return profile
 }
 
 export async function getUserId() {
@@ -100,7 +69,7 @@ export async function getUserId() {
 export async function getChatbotPreference() {
   const user = await getCurrentUser()
 
-  return user?.chatbotPreference
+  return user?.chatbot_preference
 }
 
 export async function removeImage() {
@@ -112,16 +81,8 @@ export async function removeImage() {
     }
   }
 
-  try {
-    await db.user.update({
-      where: {
-        id: id
-      },
-      data: {
-        image: null
-      }
-    })
-  } catch (error) {
+  const { error } = await updateProfile(id, { image: null })
+  if (error) {
     return {
       error: 'Something went wrong'
     }
@@ -138,27 +99,25 @@ export async function deleteAccount() {
     }
   }
   try {
-    await db.user.delete({
-      where: {
-        id: id
-      }
-    })
-
-    const userAccounts = await db.account.findMany({
-      where: {
-        userId: id
-      }
-    })
-
-    for (const account of userAccounts) {
-      await db.account.delete({
-        where: {
-          id: account.id
-        }
-      })
+    // Remove chat history first
+    const chats: string[] = await redis.zrange(`user:chat:${id}`, 0, -1)
+    for (const chat of chats) {
+      await redis.del(chat)
     }
+    await redis.del(`user:chat:${id}`)
 
-    // return redirect('/sign-in')
+    await deleteProfile(id)
+
+    if (getBackend() === 'local') {
+      deleteLocalUser(id)
+      clearSessionCookie()
+    } else {
+      const { error } = await createAdminSupabaseClient().auth.admin.deleteUser(id)
+      if (error) {
+        console.error('Error deleting auth user:', error.message)
+        return { error: 'Something went wrong' }
+      }
+    }
   } catch (error) {
     return {
       error: 'Something went wrong'
@@ -172,7 +131,7 @@ export async function getChat(id: string, userId: string) {
   try {
     chat = await redis.hgetall<Chat>(`chat:${id}`)
   } catch (error) {
-    console.warn('[Actions] Failed to load chat from Redis:', error)
+    console.warn('[Actions] Failed to load chat:', error)
     return null
   }
 
@@ -204,7 +163,7 @@ export async function removeChat({ id, path }: { id: string; path: string }) {
   await redis.zrem(`user:chat:${session.user.id}`, `chat:${id}`)
 
   revalidatePath('/chat/c/[id]')
-  return revalidatePath('/chat/c/[id]')
+  return revalidatePath(path || '/chat')
 }
 
 export async function clearChats() {
@@ -224,14 +183,11 @@ export async function clearChats() {
   if (!chats.length) {
     return redirect('/chat')
   }
-  const pipeline = redis.pipeline()
 
   for (const chat of chats) {
-    pipeline.del(chat)
-    pipeline.zrem(`user:chat:${session.user.id}`, chat)
+    await redis.del(chat)
+    await redis.zrem(`user:chat:${session.user.id}`, chat)
   }
-
-  await pipeline.exec()
 
   revalidatePath('/chat/c/[id]')
   return redirect('/chat')
@@ -243,7 +199,7 @@ export async function getSharedChat(id: string) {
   try {
     chat = await redis.hgetall<Chat>(`chat:${id}`)
   } catch (error) {
-    console.warn('[Actions] Failed to load shared chat from Redis:', error)
+    console.warn('[Actions] Failed to load shared chat:', error)
     return null
   }
 

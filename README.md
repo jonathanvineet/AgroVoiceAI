@@ -1,170 +1,139 @@
 # AgroVoiceAI
 
-AgroVoiceAI is an experimental, full-stack Next.js application that provides farmers with AI-driven assistance for crop management, pest identification, local weather, and market information. It uses Supabase for authentication and storage and integrates the Google GenAI (Gemini) SDK for AI features.
-
-This README includes:
-- Project overview
-- Architecture and key files
-- Environment variables and AI keys
-- Local setup, testing, and deployment
-- Gemini usage notes (models, streaming, image inputs)
-- Troubleshooting and developer tips
+A bilingual (English / Tamil) farming assistant for Tamil Nadu farmers: AI chat, soil-sensor crop recommendation, pest identification from a photo, district weather and live market prices, all in one web app.
 
 ---
 
-## Quick links
-- API routes: `app/api/*`
-- Chat: `app/api/chat/route.ts`
-- Image classification: `app/api/classify/route.ts`
+## The problem
+
+Small and marginal farmers in Tamil Nadu make their biggest decisions (what to plant, when to spray, when to sell) with very little data:
+
+- **No soil insight.** Lab soil tests take weeks, so farmers plant by habit and over-apply fertilizer.
+- **Pests get diagnosed late.** An agriculture officer may cover dozens of villages. By the time a pest is identified, the damage is done.
+- **Price blindness.** Farmers sell to middlemen without knowing that day's district market rate.
+- **Language and literacy.** Most agri-information portals are English-only and text-heavy.
+
+## What AgroVoiceAI solves
+
+| Need | Feature | How it works |
+|---|---|---|
+| "What should I grow?" | **Soil Test**: an ESP8266 + NPK sensor posts readings, and the app recommends one of 22 crops | `arduino-sketches/`, `/api/soil-data`, `/api/crop-recommend` |
+| "What is eating my crop?" | **Pest Identification**: upload or crop a photo to get the pest name, severity and treatment | Gemini Vision, `/api/classify` |
+| "Any farming question" | **Voice/text chat** in English or Tamil, with saved chat history | Gemini, `/api/chat` |
+| "Should I sell today?" | **Market**: today's vegetable and fruit prices per district, plus an **Insights** price-trend chart | Scraper `/api/scrape` with daily snapshots in `market_prices` |
+| "Will it rain?" | **Weather**: 5-day district forecast | OpenWeatherMap `/api/weather` |
+
+The app keeps working without internet or API keys:
+- **Without Supabase**, it stores accounts, profiles, prices, soil readings and uploads as local JSON files in `.data/`.
+- **Without a Gemini key**, chat answers come from a built-in agronomy knowledge base.
+- **Without the ML server**, crop recommendation uses a built-in nearest-profile model.
+- **Without network**, market prices are served from the last cached scrape.
 
 ---
 
-## Features
-- Chat-based agricultural Q&A (AI assistant)
-- Pest identification via image upload (Gemini Vision)
-- Onboarding flow storing user preferences and location
-- Weather dashboard (OpenWeatherMap)
-- Market data pages
-- User profile settings and feedback
+## Run it
 
----
-
-## Tech stack
-- Next.js (App Router)
-- React + TypeScript
-- Supabase (Auth + Postgres)
-- Tailwind CSS
-- Jest for tests
-
----
-
-## Important files & folders
-- `app/actions.ts` — server actions and user helpers
-- `app/api/*` — server API endpoints
-- `components/Chat/*` — chat UI
-- `components/Pest/*` — pest upload + result UI
-- `lib/` — helpers (`supabase-client.ts`, `auth.ts`, `redis.ts`, etc.)
-
----
-
-## Environment variables
-Create a `.env` in the project root (do NOT commit secrets). Typical variables used:
-
-Server (required):
-- `GOOGLE_API_KEY` — Google GenAI / Gemini API key (server-only)
-- `SUPABASE_URL` and `SUPABASE_ANON_KEY` — Supabase client keys
-- `SUPABASE_SERVICE_ROLE_KEY` — Supabase service_role key (server-only)
-
-Optional / legacy:
-- `DATABASE_URL` — for Prisma tooling (if used)
-- `OPENWEATHERMAP_API_KEY` — for weather features
-
-Notes:
-- Keep `SUPABASE_SERVICE_ROLE_KEY` and `GOOGLE_API_KEY` out of client builds.
-- The code expects a `profiles` table with snake_case columns (e.g., `user_district`, `page_shown`).
-
----
-
-## Gemini (Google GenAI) integration notes
-This repo uses the `@google/genai` SDK in server routes to access Gemini models for text and image understanding.
-
-Key points:
-- Use `GOOGLE_API_KEY` with the Generative AI API enabled in Google Cloud.
-- Chat streaming: `client.models.generateContentStream({ model, contents })` and iterate chunks: `for await (const c of response) { c.text }`.
-- Image inputs: Convert the uploaded file to base64 and send as `inlineData: { mimeType, data }` inside `contents`.
-- The app enforces a 20 MB inline data limit for images. Adjust if you switch to external file upload APIs in GenAI.
-- Model names used in code: examples include `gemini-2.5-flash` and `gemini-2.0-flash-exp`. Update model names if your account/region uses different model IDs.
-
-Streaming & thinking:
-- Gemini models support thinking configurations; be careful when changing temperature or other generation params with certain models (the repo uses defaults in most routes).
-
-Cost & safety:
-- Test with a restricted key in dev to avoid large costs. Monitor usage in Google Cloud.
-
----
-
-## API route highlights & behavior
-
-- `app/api/chat/route.ts`
-  - Streams Gemini model output back to the client via a `ReadableStream`.
-  - Saves completed chat payload to Redis: `chat:${id}` and `user:chat:${userId}` sorted set.
-
-- `app/api/classify/route.ts`
-  - Receives multipart `image`, validates type/size, converts to base64, and calls Gemini for vision analysis.
-  - Expects JSON from the model (the route strips code fences before parsing).
-
-Common pitfalls:
-- `401 Unauthorized`: ensure `auth()`/`getCurrentUser()` returns session data and Supabase tokens are configured.
-- `JSON parse error` from classify: Gemini can sometimes add formatting. The route attempts to normalize, but inspect `raw_response` in logs when parsing fails.
-- `Model not available`: swap to a supported model name in your account/region.
-
----
-
-## Local development
-Prerequisites:
-- Node.js 20.x
-- pnpm (preferred) or npm
-
-Install and run:
 ```bash
-pnpm install
-# or
 npm install
-
-# Start dev server
-pnpm dev
-# or
-npm run dev
+cp .env.example .env        # fill only what you have; everything is optional for a demo
+npm run dev                 # http://localhost:3000
 ```
-Open http://localhost:3000
 
----
+**Offline demo mode** (no cloud accounts at all):
 
-## Tests & linting
-Run Jest tests:
 ```bash
-pnpm test
+DATA_BACKEND=local npm run dev
 ```
 
-Run a linter or TypeScript build as needed:
-```bash
-pnpm build
-```
+| Env var | Needed for | Without it |
+|---|---|---|
+| `GOOGLE_API_KEY` | Gemini chat + pest vision | Chat uses the offline assistant; pest ID shows a "needs key" message |
+| `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | Cloud auth/DB/storage | Local `.data/` store |
+| `UPSTASH_REDIS_REST_URL/TOKEN` | Cloud chat history | Local `.data/kv.json` |
+| `OPENWEATHERMAP_API_KEY` | Live forecast | Sample forecast |
+| `SOIL_TEST_SERVER_URL` | External crop ML model | Built-in model |
+| `SOIL_SENSOR_KEY` | Authenticating the ESP8266 | Sensor endpoint is open |
+
+Supabase setup: `SUPABASE_TABLE_SETUP.md`, plus `supabase/migrations/*.sql` for the `soil_readings` and `pest_feedback` tables. The app falls back to local storage for those tables until the migration has been run.
 
 ---
 
-## Deployment tips
-- Provide Supabase and `GOOGLE_API_KEY` as environment variables in your host (Vercel, Netlify, etc.).
-- Use Node 20 runtime.
-- Keep service_role keys private and only in server env.
+## How to show the demo
+
+Allow about 8 minutes. Before you present:
+
+1. Run `npm run dev`. Use `DATA_BACKEND=local npm run dev` if the venue Wi-Fi is unreliable.
+2. Create the demo account once: open `/sign-up` and register `demo@farm.in` / `demo123`.
+3. Complete onboarding: set the name, pick the district **Chennai**, and add a preference such as "I grow paddy on 2 acres".
+4. Load a soil reading. Either power on the ESP8266 sensor (see `SOIL_SENSOR_SETUP.md`), or run the simulator:
+   ```bash
+   node scripts/simulate-soil-sensor.mjs http://localhost:3000
+   ```
+5. Keep a leaf photo with a visible pest (aphids or leaf spot) on the laptop.
+6. Open the Market page once while online. This caches prices in case the network drops later.
+
+Live flow:
+
+| # | Screen | What to do | What to say |
+|---|---|---|---|
+| 1 | Home `/en` | Toggle to **தமிழ்** (`/ta`) and back | "Built for Tamil-speaking farmers. Every screen is bilingual." |
+| 2 | Sign in | Log in as `demo@farm.in` | "Accounts work on Supabase or fully offline." |
+| 3 | **Soil Test** | The latest sensor reading appears (N, P, K, pH, moisture, temperature). Click **Get recommendation** | "The NPK sensor posts readings over Wi-Fi. We match them against 22 crop profiles." |
+| 4 | Soil chat | Submit the **Have any question?** box empty, then ask "What fertilizer schedule?" | "The assistant explains how to grow the recommended crop." |
+| 5 | **Pest Identification** | Upload the leaf photo, crop it, and submit. Then mark the result **Correct** and send feedback | "Gemini Vision returns the pest, severity and treatment. Farmer feedback is stored to improve accuracy." |
+| 6 | **Chat** | Use the mic or type "How do I control stem borer in paddy?" | "Voice input, streamed answers and saved history in the sidebar." |
+| 7 | **Market** | Show today's Chennai vegetable prices, then switch to fruits | "Live district rates, so farmers know a fair price before selling." |
+| 8 | **Insights** tab | Pick Onion Big | "Every scrape stores a daily snapshot, which builds this price-trend chart." |
+| 9 | **Weather** | Show the 5-day forecast | "Plan spraying and harvest around rain." |
+| 10 | Settings | Change the district | "Personalisation drives the market and weather pages." |
+
+**If something fails live:**
+- No internet: market prices come from the cache, chat uses the offline assistant, and the forecast falls back to sample data.
+- No soil reading: run the simulator again.
+- Pest ID shows the "needs GOOGLE_API_KEY" message: explain that vision is the only cloud-only feature, and show a screenshot of a previous result.
 
 ---
 
-## Troubleshooting checklist
-- Check env variables and ensure keys are present on the server.
-- Confirm `profiles` table exists with expected snake_case columns.
-- If streaming fails, verify model name & that `@google/genai` is installed and at a compatible version.
-- For image classification errors, confirm the uploaded file type and size (the code limits inline images to ~20 MB).
+## Presentation guide
+
+Use 8–10 slides and spend about 1 minute per slide.
+
+1. **Title.** AgroVoiceAI: AI farming assistant for Tamil Nadu. Show the team and guide.
+2. **Problem.** The four pain points above. If you have them, cite district statistics (farm sizes, distress sales).
+3. **Existing solutions and their gaps.** Lab soil tests are slow. Kisan call centres are voice-only, with no image or sensor data. Price portals are English-only.
+4. **Our solution.** One app, five tools, bilingual, works offline.
+5. **Architecture.** ESP8266 + NPK sensor → `/api/soil-data` → Next.js (App Router) → data layer (Supabase or local) → Gemini for chat and vision → scraper → OpenWeatherMap. Use one diagram.
+6. **Hardware.** Photo of the sensor rig. Explain the RS485 NPK probe → ESP8266 → HTTPS POST path.
+7. **Live demo.** Follow the flow above.
+8. **Results.** Crop recommendation covers 22 crops. Pest feedback measures accuracy (count *Correct* against *Incorrect* in `pest_feedback`). Price history grows by one data point per item per day.
+9. **Social impact and SDGs.** SDG 2 (Zero Hunger), SDG 12 (Responsible consumption: less fertilizer overuse), SDG 1 (No poverty: fair prices).
+10. **Future work.** On-device pest model for offline vision, SMS/IVR channel, Uzhavar Sandhai integration, and more sensor types (soil moisture alerts).
+
+Likely viva questions:
+- *How does the crop recommendation work?* `lib/offline-agri.ts` holds 22 crop profiles from the public Crop Recommendation dataset. The app normalises N, P, K, temperature, humidity and pH, then picks the nearest profile. An external ML server can replace it through `SOIL_TEST_SERVER_URL`.
+- *What if the farmer has no internet?* The data layer (`lib/data.ts`) falls back to local storage, and every external call has a cached or offline path.
+- *Security?* The server takes the user id from the session cookie, never from the request body. Local passwords are hashed with scrypt, and session cookies are signed with HMAC. The sensor endpoint accepts an optional shared key.
 
 ---
 
-## Contributing
-Open issues or PRs on GitHub. For large changes, open an issue to discuss first.
+## Code map
 
----
+- `app/[locale]/*`: pages (`en`, `ta`)
+- `app/api/*`: API routes
+  - `auth/*`: sign up, sign in, logout, session (Supabase or local)
+  - `user/*`: profile field updates (session-scoped)
+  - `chat`, `soil-test-chat`: Gemini chat with offline fallback
+  - `classify`: Gemini Vision pest identification
+  - `soil-data`, `crop-recommend`: sensor ingest and crop recommendation
+  - `scrape`, `scrape/fruits`, `get-market-prices`, `store-market-prices`: market prices and price history
+  - `upload-image`, `upload-pest-image`, `uploads/[...path]`: image uploads
+  - `pest-feedback`: stores whether the model's answer was correct
+- `lib/backend.ts`: picks the `supabase` or `local` backend
+- `lib/data.ts`: the only module that touches persistence
+- `lib/local-auth.ts`, `lib/local-store.ts`: offline auth and JSON store
+- `lib/redis.ts`: Upstash with a local fallback
+- `lib/offline-agri.ts`: offline crop model and Q&A
+- `arduino-sketches/`: ESP8266 / Arduino Wi-Fi sensor firmware
+- `scripts/simulate-soil-sensor.mjs`: sensor simulator for demos
 
-If you want, I can also:
-- Add `CONTRIBUTING.md` with dev conventions
-- Add a `docs/` folder with API examples and architecture diagrams
-- Create a `dev-setup.sh` bootstrap script
-
-Tell me which of those you'd like next.
-
-If you'd like, I can also:
-
-- Add a `CONTRIBUTING.md` with development conventions
-- Generate a smaller `docs/` folder with architecture diagrams and API examples
-- Create a `dev-setup.sh` script to bootstrap a dev environment
-
-Tell me which of those you'd like next.
-
+Tests: `npm test`. Type-check: `npm run type-check`.

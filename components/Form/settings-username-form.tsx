@@ -23,7 +23,7 @@ export function SettingsUsernameForm({
   save,
   subDescription
 }: SettingsProps) {
-  const [userName, setUserName] = useState(user?.userName || '')
+  const [userName, setUserName] = useState(user?.user_name || '')
   const [isUserNameChanged, setIsUserNameChanged] = useState(false)
   const [isSavingUserName, setIsSavingUserName] = useState<boolean>(false)
 
@@ -50,7 +50,7 @@ export function SettingsUsernameForm({
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription>
-            {user?.userName ? subDescription : description}
+            {user?.user_name ? subDescription : description}
           </CardDescription>
         </CardHeader>
 
@@ -62,19 +62,19 @@ export function SettingsUsernameForm({
             <Input
               id="email"
               className={cn(
-                `${user?.userName?.length > 0 ? 'text-gray-400' : ''}`
+                `${user?.user_name?.length > 0 ? 'text-gray-400' : ''}`
               )}
               size={32}
               value={userName}
               onChange={handleUserNameChange}
-              readOnly={user?.userName?.length > 0 ? true : false}
+              readOnly={user?.user_name?.length > 0 ? true : false}
             />
           </div>
         </CardContent>
         <CardFooter
           className={cn(
             'bg-gradient-to-r dark:from-green-900/40 from-10% dark:via-teal-900/40 via-30% dark:to-emerald-900/40 from-green-200 via-teal-100 to-emerald-100  to-60% border dark:border-green-900/50 border-green-200 rounded-b-2xl md:-m-2 p-3 md:mt-4 justify-end flex',
-            `${user?.userName?.length > 0 ? 'hidden' : ''}`
+            `${user?.user_name?.length > 0 ? 'hidden' : ''}`
           )}
         >
           {' '}

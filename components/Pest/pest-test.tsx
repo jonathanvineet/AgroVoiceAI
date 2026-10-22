@@ -219,7 +219,8 @@ export default function PestTest({
           body: formData
         })
         if (!response.ok) {
-          throw new Error('Failed to classify image')
+          const body = await response.json().catch(() => ({}))
+          throw new Error(body.error || 'Failed to classify image')
         }
         toast.dismiss()
         const data = await response.json()
@@ -246,8 +247,9 @@ export default function PestTest({
           uploadResponse = await handleFileUpload(event)
         }
       }
-    } catch (error) {
-      toast.error('Error processing file. Please try again later.')
+    } catch (error: any) {
+      toast.dismiss()
+      toast.error(error?.message || 'Error processing file. Please try again later.')
     } finally {
       setIsProcessing(false)
       setIsProcessed(true)

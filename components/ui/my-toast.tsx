@@ -1,7 +1,7 @@
 import React from 'react'
 import toast from 'react-hot-toast'
 
-type ToastType = 'success' | 'error'
+type ToastType = 'success' | 'error' | 'info'
 
 interface MyToastProps {
   message: string
@@ -12,7 +12,7 @@ const MyToast: React.FC<MyToastProps> = ({ message, type }) => {
   const toastOptions = {
     style: {
       borderRadius: '10px',
-      background: type === 'success' ? '#333' : '#d83030',
+      background: type === 'error' ? '#d83030' : '#333',
       color: '#fff',
       fontSize: '14px'
     },
@@ -27,7 +27,9 @@ const MyToast: React.FC<MyToastProps> = ({ message, type }) => {
     <>
       {type === 'success'
         ? toast.success(message, toastOptions)
-        : toast.error(message, toastOptions)}
+        : type === 'info'
+          ? toast(message, toastOptions)
+          : toast.error(message, toastOptions)}
     </>
   )
 }

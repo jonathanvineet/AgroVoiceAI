@@ -1,5 +1,5 @@
 'use client'
-import { User } from '@prisma/client'
+import type { Profile as User } from '@/lib/data'
 import React, { useEffect, useState } from 'react'
 import {
   Table,

@@ -29,6 +29,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    if (!process.env.GOOGLE_API_KEY) {
+      return NextResponse.json(
+        { error: 'Pest identification needs GOOGLE_API_KEY (Gemini) in .env' },
+        { status: 503 }
+      )
+    }
+
     const formData = await request.formData()
     const imageFile = formData.get('image') as File
 

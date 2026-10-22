@@ -1,87 +1,27 @@
-import { getUserId } from '@/app/actions'
-import { db } from '@/lib/db'
-import axios from 'axios'
-import { JSDOM } from 'jsdom'
+import { getCurrentUser } from '@/app/actions'
+import { scrapeMarket } from '@/lib/market-scrape'
 import { NextRequest, NextResponse } from 'next/server'
 
-
-function scrapeDataFromTables(response:any) {
-  const dom = new JSDOM(response.data);
-  const document = dom.window.document;
-  let scrapedData: string[] = []
-
-  const tables = document.querySelectorAll('table');
-  tables.forEach((table) => {
-    table.querySelectorAll('tr').forEach((row) => {
-      const rowData: string[] = []
-      row.querySelectorAll('td').forEach((cell) => {
-        rowData.push(cell.textContent?.trim() || '');
-      });
-      scrapedData.push(rowData.join(', '));
-    });
-  });
-
-  return scrapedData;
+async function respond(location: string | null | undefined) {
+  if (!location) {
+    return NextResponse.json({ message: 'Missing location parameter' }, { status: 400 })
+  }
+  try {
+    return NextResponse.json(await scrapeMarket(location, 'vegetables'))
+  } catch (error: any) {
+    return NextResponse.json(
+      { message: 'Market prices are unavailable right now.', scrapedData: [] },
+      { status: 502 }
+    )
+  }
 }
-
 
 export async function POST(req: NextRequest) {
-  try {
-    const { location } = await req.json()
-    if (!location) {
-      return NextResponse.json({ message: 'Missing location parameter' }, { status: 400 })
-    }
-
-    const websiteUrl: string = `https://market.todaypricerates.com/${location}-vegetables-price-in-Tamil-Nadu`
-    // 'https://market.todaypricerates.com/${location}-vegetables-price-in-Tamil-Nadu'
-    // 'https://market.todaypricerates.com/fruits-daily-price'
-    const response = await axios.get(websiteUrl)
-
-    console.debug('[Scrape] Requested URL:', websiteUrl, 'Status:', response.status, 'BodyLength:', response.data?.length)
-    if (response.status === 200) {
-      const scrapedData = scrapeDataFromTables(response)
-
-      if (!scrapedData || scrapedData.length === 0) {
-        return NextResponse.json({ scrapedData, debug: { websiteUrl, status: response.status, bodyLength: response.data?.length || 0 } })
-      }
-
-      return NextResponse.json({ scrapedData })
-    } else {
-      return NextResponse.json({ message: 'Failed to retrieve the webpage.', status: response.status })
-    }
-  } catch (error: any) {
-    console.warn('[Scrape] Error fetching:', error)
-    return NextResponse.json({ message: error.message })
-  }
+  const { location } = await req.json().catch(() => ({}))
+  return respond(location)
 }
 
-export async function GET(req: NextRequest) {
-  const user = await getUserId()
-  const location = await db.user.findFirst({
-    where: {
-      id: user
-    },
-    select: {
-      userDistrict: true
-    }
-  })
-  try{
-    
-    const websiteUrl: string = `https://market.todaypricerates.com/${location?.userDistrict}-vegetables-price-in-Tamil-Nadu`
-    
-    const response = await axios.get(websiteUrl)
-    
-    if (response.status === 200) {
-      const dom = new JSDOM(response.data)
-      const document = dom.window.document
-
-      const scrapedData = scrapeDataFromTables(response)
-      return NextResponse.json({ scrapedData })
-    } else {
-      return NextResponse.json({ message: 'Failed to retrieve the webpage.' })
-    }
-  } catch (error: any) {
-    return NextResponse.json({ message: error.message })
-  }
-  // return NextResponse.json({location:location})
+export async function GET() {
+  const user = await getCurrentUser()
+  return respond(user?.user_district)
 }

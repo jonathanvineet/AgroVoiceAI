@@ -7,14 +7,8 @@ import {
   prefSchema,
   validateInput
 } from '@/lib/schema'
-import { User } from '@prisma/client/edge'
+import type { Profile as User } from '@/lib/data'
 import { z } from 'zod'
-import { getDatabase } from 'firebase/database'
-import { app } from '@/lib/firebase'
-import { ref, push, child, update, onValue } from 'firebase/database'
-import { getCurrentUser } from '@/app/actions'
-
-const database = getDatabase(app)
 
 const handleNameSubmit = async (
   event: React.FormEvent<HTMLFormElement>,
@@ -392,19 +386,16 @@ const handleFeedbackSubmit = async (
   }
 
   try {
-    const user = await getCurrentUser()
-
-    const userName = user?.userName || 'anonymous'
-
-    const feedbackRef = push(ref(database, 'PestFeedbacks/'))
-    await update(
-      ref(database, `PestFeedbacks/${feedbackRef.key}-${userName}`),
-      data
-    )
-
-    setIsFeedbackSuccess && setIsFeedbackSuccess(true)
+    const response = await fetch('/api/pest-feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    setIsFeedbackSuccess && setIsFeedbackSuccess(response.ok)
   } catch (error) {
     setIsFeedbackSuccess && setIsFeedbackSuccess(false)
+  } finally {
+    setIsFeedbackLoading && setIsFeedbackLoading(false)
   }
 }
 

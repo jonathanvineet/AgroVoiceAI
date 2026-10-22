@@ -3,15 +3,11 @@ import Home from './home'
 import Navbar from './home-navbar'
 import { getTranslations } from 'next-intl/server'
 import { navItems } from '@/config/constants'
-import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { auth } from '@/lib/auth'
 
 export async function DotBackGround() {
   const t = await getTranslations('Index')
-  const supabase = await createServerSupabaseClient()
-
-  const {
-    data: { user }
-  } = await supabase.auth.getUser()
+  const user = (await auth())?.user
 
   return (
     <div className="min-h-screen w-full dark:bg-background dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex flex-col items-center justify-center">

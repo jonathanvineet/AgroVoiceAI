@@ -21,7 +21,7 @@ import {
 } from '@/components/ui/select'
 import { tnDistricts, tnDistrictsInTamil } from '@/config/constants'
 import { useState } from 'react'
-import { User } from '@prisma/client'
+import type { Profile as User } from '@/lib/data'
 import toast from 'react-hot-toast'
 import { handleDistrictSubmit } from '@/helpers/user-info'
 import {
@@ -58,7 +58,7 @@ export function OnboardingLocationForm({
   back,
   saveName
 }: OnboardingFormProps) {
-  const [district, setDistrict] = useState<string>(user?.userDistrict || '')
+  const [district, setDistrict] = useState<string>(user?.user_district || '')
   const [isDistrictChanged, setIsDistrictChanged] = useState<boolean>(false)
   const [isSavingDistrict, setIsSavingDistrict] = useState<boolean>(false)
   const [next, setNext] = useState(false)
@@ -119,15 +119,15 @@ export function OnboardingLocationForm({
                 <FormItem onChange={handleDistrictChange}>
                   <Select
                     onValueChange={field.onChange}
-                    defaultValue={user?.userDistrict || 'Select your district'}
+                    defaultValue={user?.user_district || 'Select your district'}
                     disabled={next || isSavingDistrict}
                   >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue
                           placeholder={
-                            user?.userDistrict
-                              ? user?.userDistrict
+                            user?.user_district
+                              ? user?.user_district
                               : 'Select your district'
                           }
                         />
