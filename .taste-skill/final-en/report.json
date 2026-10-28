@@ -1,0 +1,2301 @@
+{
+ "url": "http://localhost:3100/en",
+ "at": "2026-10-28T13:45:34.534Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 5,
+    "transitions": 11,
+    "scripted": 1,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 8059,
+     "screens": 9,
+     "words": 290,
+     "img": 3,
+     "video": 1,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "paddy-fields-thanjavur.jpg",
+      "paddy-field-full-of-spider-web-img.jpg",
+      "paddy-field-in-tamil-nadu-india.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Ask a question, or show a leaf?",
+     "words": 7,
+     "chars": 31,
+     "lines": 2,
+     "size": 87.4,
+     "vw": 6.1,
+     "font": "__zodiak_92f844",
+     "weight": 100,
+     "tracking": -0.01,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "left",
+     "widthRatio": 0,
+     "top": 0,
+     "tag": "h2",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "ASK YOUR FARM IN TAMIL.",
+     "words": 5,
+     "lines": 2,
+     "size": 87.4,
+     "font": "__zodiak_92f844"
+    },
+    "headings": [
+     {
+      "text": "Plant it today, or next week?",
+      "words": 6,
+      "chars": 29,
+      "lines": 2,
+      "size": 87.4,
+      "vw": 6.1,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ask a question, or show a leaf?",
+      "words": 7,
+      "chars": 31,
+      "lines": 2,
+      "size": 87.4,
+      "vw": 6.1,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "ASK YOUR FARM IN TAMIL.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 87.4,
+      "vw": 6.1,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 653,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "The forecast comes first",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.39,
+      "top": 3946,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Six tools, one assistant",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 4829,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ask the assistant",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 5043,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Weather for your district",
+      "words": 4,
+      "chars": 25,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.52,
+      "top": 5211,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Today's market prices",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 5300,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Read your soil",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 5390,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Identify a pest",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 5480,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Set your district and crops",
+      "words": 5,
+      "chars": 27,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.56,
+      "top": 5569,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "First, probe the bund.",
+      "words": 4,
+      "chars": 22,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 5878,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 2,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_2a03db",
+       "share": 0.83,
+       "mono": false
+      },
+      {
+       "family": "__zodiak_92f844",
+       "share": 0.17,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      15,
+      20,
+      24,
+      64,
+      87
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_2a03db",
+      "size": 19.9,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.6
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 87.4,
+      "vw": 6.1,
+      "font": "__zodiak_92f844",
+      "text": "Ask your farm"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.13,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#0f1f10",
+       "top": 0,
+       "hsl": {
+        "h": 124,
+        "s": 0.35,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#070d07",
+       "top": 1073,
+       "hsl": {
+        "h": 120,
+        "s": 0.3,
+        "l": 0.04
+       }
+      },
+      {
+       "color": "#162a17",
+       "top": 5822,
+       "hsl": {
+        "h": 123,
+        "s": 0.31,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#f3f5ef",
+       "top": 6744,
+       "hsl": {
+        "h": 80,
+        "s": 0.23,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f3f5ef",
+       "share": 0.66
+      },
+      {
+       "color": "#a9b2a6",
+       "share": 0.17
+      },
+      {
+       "color": "#0f1f10",
+       "share": 0.11
+      },
+      {
+       "color": "#44523f",
+       "share": 0.05
+      },
+      {
+       "color": "#c6f19d",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c6f19d",
+      "hsl": {
+       "h": 91,
+       "s": 0.75,
+       "l": 0.78
+      },
+      "fg": "#0f1f10"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Start chatting",
+      "Install the app",
+      "Hold to speak"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.55
+     },
+     {
+      "type": "img",
+      "ratio": 0.31
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__zodiak_92f844",
+     "__hanken_grotesk_2a03db",
+     "__hanken_grotesk_fallback_2a03db",
+     "__noto_sans_tamil_75dee1"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 8059,
+    "margins": {
+     "left": 32,
+     "right": 32
+    },
+    "sections": [
+     {
+      "sel": "section.lv-hero",
+      "tag": "section",
+      "top": 0,
+      "height": 900,
+      "words": 69,
+      "media": 1,
+      "middle": 221,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-show",
+      "tag": "section",
+      "top": 1073,
+      "height": 2700,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Plant it today,",
+       "size": 87,
+       "tag": "h2"
+      },
+      "left": 445,
+      "right": 178,
+      "textLeft": 445,
+      "textRight": 178,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section.lv-wind.lv-wrap",
+      "tag": "section",
+      "top": 3773,
+      "height": 884,
+      "words": 28,
+      "media": 2,
+      "middle": 20,
+      "heading": {
+       "text": "The forecast comes first",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 846,
+      "textRight": 104,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools.lv-wrap",
+      "tag": "section",
+      "top": 4656,
+      "height": 993,
+      "words": 49,
+      "media": 0,
+      "middle": 145,
+      "heading": {
+       "text": "Six tools, one assistant",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 98,
+      "textLeft": 32,
+      "textRight": 98,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-probe",
+      "tag": "section",
+      "top": 5822,
+      "height": 922,
+      "words": 23,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "First, probe the bund.",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-cta",
+      "tag": "section",
+      "top": 6744,
+      "height": 900,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ask a question,",
+       "size": 87,
+       "tag": "h2"
+      },
+      "left": 411,
+      "right": 411,
+      "textLeft": 411,
+      "textRight": 411,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.lv-footer.lv-wrap",
+      "tag": "footer",
+      "top": 7644,
+      "height": 414,
+      "words": 62,
+      "media": 0,
+      "middle": 346,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 7632,
+      "height": 280
+     }
+    ],
+    "h1s": [
+     {
+      "text": "ASK YOUR FARM IN TAMIL.",
+      "size": 87,
+      "top": 653,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 4
+     },
+     {
+      "x": 846,
+      "n": 2
+     },
+     {
+      "x": 956,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 8,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.01,
+    "voidBox": {
+     "x": 1200,
+     "y": 840,
+     "w": 240,
+     "h": 60
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 5,
+    "transitions": 11,
+    "scripted": 1,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 9176,
+     "screens": 9,
+     "words": 290,
+     "img": 3,
+     "video": 1,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "paddy-fields-thanjavur.jpg",
+      "paddy-field-full-of-spider-web-img.jpg",
+      "paddy-field-in-tamil-nadu-india.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Plant it today, or next week?",
+     "words": 6,
+     "chars": 29,
+     "lines": 2,
+     "size": 84.5,
+     "vw": 11,
+     "font": "__zodiak_92f844",
+     "weight": 100,
+     "tracking": -0.01,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "left",
+     "widthRatio": 0,
+     "top": 0,
+     "tag": "h2",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "ASK YOUR FARM IN TAMIL.",
+     "words": 5,
+     "lines": 2,
+     "size": 51.1,
+     "font": "__zodiak_92f844"
+    },
+    "headings": [
+     {
+      "text": "Plant it today, or next week?",
+      "words": 6,
+      "chars": 29,
+      "lines": 2,
+      "size": 84.5,
+      "vw": 11,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ask a question, or show a leaf?",
+      "words": 7,
+      "chars": 31,
+      "lines": 2,
+      "size": 51.1,
+      "vw": 6.7,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "ASK YOUR FARM IN TAMIL.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 51.1,
+      "vw": 6.7,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 560,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "The forecast comes first",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.74,
+      "top": 4779,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Six tools, one assistant",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 5600,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ask the assistant",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.49,
+      "top": 5754,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Weather for your district",
+      "words": 4,
+      "chars": 25,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.69,
+      "top": 5890,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Today's market prices",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 5953,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Read your soil",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 6017,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Identify a pest",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 6080,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "Set your district and crops",
+      "words": 5,
+      "chars": 27,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.75,
+      "top": 6144,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "First, probe the bund.",
+      "words": 4,
+      "chars": 22,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 6934,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 2,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_2a03db",
+       "share": 0.83,
+       "mono": false
+      },
+      {
+       "family": "__zodiak_92f844",
+       "share": 0.17,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      18,
+      22,
+      45,
+      51,
+      85
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_2a03db",
+      "size": 18.2,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.6
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 84.5,
+      "vw": 11,
+      "font": "__zodiak_92f844",
+      "text": "Plant it today,"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.21,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#0f1f10",
+       "top": 0,
+       "hsl": {
+        "h": 124,
+        "s": 0.35,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#070d07",
+       "top": 1120,
+       "hsl": {
+        "h": 120,
+        "s": 0.3,
+        "l": 0.04
+       }
+      },
+      {
+       "color": "#162a17",
+       "top": 6902,
+       "hsl": {
+        "h": 123,
+        "s": 0.31,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#f3f5ef",
+       "top": 7645,
+       "hsl": {
+        "h": 80,
+        "s": 0.23,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f3f5ef",
+       "share": 0.66
+      },
+      {
+       "color": "#a9b2a6",
+       "share": 0.17
+      },
+      {
+       "color": "#0f1f10",
+       "share": 0.11
+      },
+      {
+       "color": "#44523f",
+       "share": 0.05
+      },
+      {
+       "color": "#c6f19d",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c6f19d",
+      "hsl": {
+       "h": 91,
+       "s": 0.75,
+       "l": 0.78
+      },
+      "fg": "#0f1f10"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Start chatting",
+      "Install the app",
+      "Hold to speak"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.51
+     },
+     {
+      "type": "img",
+      "ratio": 0.41
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 83,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__zodiak_92f844",
+     "__hanken_grotesk_2a03db",
+     "__hanken_grotesk_fallback_2a03db",
+     "__noto_sans_tamil_75dee1"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 9176,
+    "margins": {
+     "left": 17,
+     "right": 17
+    },
+    "sections": [
+     {
+      "sel": "section.lv-hero",
+      "tag": "section",
+      "top": 0,
+      "height": 1024,
+      "words": 69,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 17,
+      "right": 17,
+      "textLeft": 17,
+      "textRight": 17,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-show",
+      "tag": "section",
+      "top": 1120,
+      "height": 3072,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Plant it today,",
+       "size": 84,
+       "tag": "h2"
+      },
+      "left": 118,
+      "right": 118,
+      "textLeft": 118,
+      "textRight": 118,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section.lv-wind.lv-wrap",
+      "tag": "section",
+      "top": 4192,
+      "height": 1312,
+      "words": 28,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "The forecast comes first",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 17,
+      "right": 17,
+      "textLeft": 17,
+      "textRight": 233,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools.lv-wrap",
+      "tag": "section",
+      "top": 5504,
+      "height": 696,
+      "words": 49,
+      "media": 0,
+      "middle": 43,
+      "heading": {
+       "text": "Six tools, one assistant",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 17,
+      "right": 79,
+      "textLeft": 17,
+      "textRight": 79,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-probe",
+      "tag": "section",
+      "top": 6297,
+      "height": 1348,
+      "words": 23,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 17,
+      "right": 17,
+      "textLeft": 17,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-cta",
+      "tag": "section",
+      "top": 7645,
+      "height": 1024,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ask a question,",
+       "size": 51,
+       "tag": "h2"
+      },
+      "left": 152,
+      "right": 152,
+      "textLeft": 152,
+      "textRight": 152,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.lv-footer.lv-wrap",
+      "tag": "footer",
+      "top": 8669,
+      "height": 507,
+      "words": 62,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 17,
+      "right": 28,
+      "textLeft": 17,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 7736,
+      "height": 376
+     },
+     {
+      "top": 8224,
+      "height": 360
+     },
+     {
+      "top": 8652,
+      "height": 324
+     }
+    ],
+    "h1s": [
+     {
+      "text": "ASK YOUR FARM IN TAMIL.",
+      "size": 51,
+      "top": 560,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 17,
+      "n": 7
+     }
+    ],
+    "leftBlocks": 7,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.99,
+    0.94,
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 5,
+    "transitions": 11,
+    "scripted": 1,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 7773,
+     "screens": 9.2,
+     "words": 275,
+     "img": 3,
+     "video": 1,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 1,
+     "uiPictures": 2,
+     "pictureSamples": [
+      "paddy-fields-thanjavur.jpg",
+      "paddy-field-full-of-spider-web-img.jpg",
+      "paddy-field-in-tamil-nadu-india.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Ask a question, or show a leaf?",
+     "words": 7,
+     "chars": 31,
+     "lines": 2,
+     "size": 42.9,
+     "vw": 11,
+     "font": "__zodiak_92f844",
+     "weight": 100,
+     "tracking": -0.01,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "left",
+     "widthRatio": 0,
+     "top": 0,
+     "tag": "h2",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "ASK YOUR FARM IN TAMIL.",
+     "words": 5,
+     "lines": 2,
+     "size": 41,
+     "font": "__zodiak_92f844"
+    },
+    "headings": [
+     {
+      "text": "Plant it today, or next week?",
+      "words": 6,
+      "chars": 29,
+      "lines": 2,
+      "size": 42.9,
+      "vw": 11,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ask a question, or show a leaf?",
+      "words": 7,
+      "chars": 31,
+      "lines": 2,
+      "size": 42.9,
+      "vw": 11,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "ASK YOUR FARM IN TAMIL.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 41,
+      "vw": 10.5,
+      "font": "__zodiak_92f844",
+      "weight": 100,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 378,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "The forecast comes first",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4154,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Six tools, one assistant",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4735,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ask the assistant",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4881,
+      "tag": "a",
+      "kind": "statement"
+     },
+     {
+      "text": "Weather for your district",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5024,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Today's market prices",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5107,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Read your soil",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5190,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Identify a pest",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5236,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "Set your district and crops",
+      "words": 5,
+      "chars": 27,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5283,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "First, probe the bund.",
+      "words": 4,
+      "chars": 22,
+      "lines": 1,
+      "size": 35.1,
+      "vw": 9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": -0.01,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6047,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 2,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_2a03db",
+       "share": 0.83,
+       "mono": false
+      },
+      {
+       "family": "__zodiak_92f844",
+       "share": 0.17,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      17,
+      19,
+      33,
+      35,
+      41,
+      43
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_2a03db",
+      "size": 17.3,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.6
+     },
+     "measureChars": 41,
+     "max": {
+      "size": 42.9,
+      "vw": 11,
+      "font": "__zodiak_92f844",
+      "text": "Plant it today,"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.21,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#0f1f10",
+       "top": 0,
+       "hsl": {
+        "h": 124,
+        "s": 0.35,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#070d07",
+       "top": 1270,
+       "hsl": {
+        "h": 120,
+        "s": 0.3,
+        "l": 0.04
+       }
+      },
+      {
+       "color": "#162a17",
+       "top": 6015,
+       "hsl": {
+        "h": 123,
+        "s": 0.31,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#f3f5ef",
+       "top": 6497,
+       "hsl": {
+        "h": 80,
+        "s": 0.23,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f3f5ef",
+       "share": 0.65
+      },
+      {
+       "color": "#a9b2a6",
+       "share": 0.18
+      },
+      {
+       "color": "#0f1f10",
+       "share": 0.11
+      },
+      {
+       "color": "#44523f",
+       "share": 0.05
+      },
+      {
+       "color": "#c6f19d",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c6f19d",
+      "hsl": {
+       "h": 91,
+       "s": 0.75,
+       "l": 0.78
+      },
+      "fg": "#0f1f10"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Start chatting",
+      "Install the app",
+      "Hold to speak"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.36
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": false,
+     "height": 82,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__zodiak_92f844",
+     "__hanken_grotesk_2a03db",
+     "__hanken_grotesk_fallback_2a03db",
+     "__noto_sans_tamil_75dee1"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 7773,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "section.lv-hero",
+      "tag": "section",
+      "top": 0,
+      "height": 1174,
+      "words": 66,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Ask your farm",
+       "size": 41,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-show",
+      "tag": "section",
+      "top": 1270,
+      "height": 2532,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Plant it today,",
+       "size": 43,
+       "tag": "h2"
+      },
+      "left": 60,
+      "right": 60,
+      "textLeft": 60,
+      "textRight": 60,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section.lv-wind.lv-wrap",
+      "tag": "section",
+      "top": 3802,
+      "height": 836,
+      "words": 28,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "The forecast comes first",
+       "size": 33,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools.lv-wrap",
+      "tag": "section",
+      "top": 4639,
+      "height": 727,
+      "words": 43,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Six tools, one assistant",
+       "size": 33,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 18,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-probe",
+      "tag": "section",
+      "top": 5462,
+      "height": 1035,
+      "words": 23,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-cta",
+      "tag": "section",
+      "top": 6497,
+      "height": 844,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ask a question,",
+       "size": 43,
+       "tag": "h2"
+      },
+      "left": 27,
+      "right": 27,
+      "textLeft": 27,
+      "textRight": 27,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.lv-footer.lv-wrap",
+      "tag": "footer",
+      "top": 7341,
+      "height": 432,
+      "words": 62,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 22,
+      "textLeft": 16,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "ASK YOUR FARM IN TAMIL.",
+      "size": 41,
+      "top": 378,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 7
+     }
+    ],
+    "leftBlocks": 7,
+    "bodySize": 17,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "font-not-dealt",
+   "width": 1440,
+   "message": "The sheet dealt Zodiak and Hanken Grotesk, but the page renders __Hanken_Grotesk_2a03db, __zodiak_92f844.",
+   "fix": "Load the dealt face (the link on the sheet) and put it first in font-family. A build that falls back to a default face lands on the default look."
+  },
+  {
+   "level": "WARN",
+   "id": "pinned-over-picture",
+   "width": 1440,
+   "message": "Pinned large text slides across pictures while the page scrolls: \"Plant it today,\" (screen 4, 100% over a picture); \"or next week?\" (screen 5, 100% over a picture)",
+   "fix": "Jurors read a pinned title crossing drawings or photographs as a collision. Keep the pictures in the column the title does not occupy, or unpin it.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/desktop-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/desktop-page-01.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/desktop-page-02.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/tablet-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/tablet-page-01.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/mobile-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/mobile-page-01.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-en/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

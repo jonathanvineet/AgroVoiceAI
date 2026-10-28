@@ -1,0 +1,2305 @@
+{
+ "url": "http://localhost:3100/ta",
+ "at": "2026-10-28T13:46:10.931Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 5,
+    "transitions": 11,
+    "scripted": 1,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 8326,
+     "screens": 9.3,
+     "words": 239,
+     "img": 3,
+     "video": 1,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 1,
+     "uiPictures": 2,
+     "pictureSamples": [
+      "paddy-fields-thanjavur.jpg",
+      "paddy-field-full-of-spider-web-img.jpg",
+      "paddy-field-in-tamil-nadu-india.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 54.2,
+     "vw": 3.8,
+     "font": "__zodiak_92f844",
+     "weight": 300,
+     "tracking": 0,
+     "leading": 1.25,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.63,
+     "top": 726,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+     "words": 5,
+     "lines": 2,
+     "size": 54.2,
+     "font": "__zodiak_92f844"
+    },
+    "headings": [
+     {
+      "text": "இன்று நடவா, அடுத்த வாரமா?",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 54.2,
+      "vw": 3.8,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "கேள்வி கேட்கவா, இலையைக் காட்டவா?",
+      "words": 4,
+      "chars": 32,
+      "lines": 2,
+      "size": 54.2,
+      "vw": 3.8,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+      "words": 5,
+      "chars": 37,
+      "lines": 2,
+      "size": 54.2,
+      "vw": 3.8,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 726,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "முதலில் வானிலை",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.39,
+      "top": 3979,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "ஆறு கருவிகள், ஒரே உதவியாளர்",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 4959,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "உதவியாளரிடம் கேளுங்கள்",
+      "words": 2,
+      "chars": 22,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.62,
+      "top": 5186,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "உங்கள் மாவட்ட வானிலை",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.59,
+      "top": 5385,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "இன்றைய சந்தை விலை",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.54,
+      "top": 5474,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "மண்ணை அறிக",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 5564,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "பூச்சியைக் கண்டறிக",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 5653,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "மாவட்டம், பயிர்களை அமைக்க",
+      "words": 3,
+      "chars": 25,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.68,
+      "top": 5743,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "முதலில், உணரியை செருகுங்கள்.",
+      "words": 3,
+      "chars": 28,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 6052,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 2,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_2a03db",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "__zodiak_92f844",
+       "share": 0.16,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      15,
+      20,
+      24,
+      54,
+      64
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_2a03db",
+      "size": 19.9,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.6
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 64,
+      "vw": 4.4,
+      "font": "__zodiak_92f844",
+      "text": "முதலில் வானிலை"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.18,
+     "centerShare": 0.13,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#0f1f10",
+       "top": 0,
+       "hsl": {
+        "h": 124,
+        "s": 0.35,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#070d07",
+       "top": 1106,
+       "hsl": {
+        "h": 120,
+        "s": 0.3,
+        "l": 0.04
+       }
+      },
+      {
+       "color": "#162a17",
+       "top": 5996,
+       "hsl": {
+        "h": 123,
+        "s": 0.31,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#f3f5ef",
+       "top": 7012,
+       "hsl": {
+        "h": 80,
+        "s": 0.23,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f3f5ef",
+       "share": 0.63
+      },
+      {
+       "color": "#a9b2a6",
+       "share": 0.17
+      },
+      {
+       "color": "#0f1f10",
+       "share": 0.12
+      },
+      {
+       "color": "#44523f",
+       "share": 0.06
+      },
+      {
+       "color": "#c6f19d",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c6f19d",
+      "hsl": {
+       "h": 91,
+       "s": 0.75,
+       "l": 0.78
+      },
+      "fg": "#0f1f10"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "உரையாடலை தொடங்குங்கள்",
+      "செயலியை நிறுவுக",
+      "அழுத்திப் பேசுங்கள்"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.48
+     },
+     {
+      "type": "img",
+      "ratio": 0.27
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__zodiak_92f844",
+     "__zodiak_fallback_92f844",
+     "__hanken_grotesk_2a03db",
+     "__hanken_grotesk_fallback_2a03db",
+     "__noto_sans_tamil_75dee1"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 8326,
+    "margins": {
+     "left": 32,
+     "right": 32
+    },
+    "sections": [
+     {
+      "sel": "section.lv-hero",
+      "tag": "section",
+      "top": 0,
+      "height": 933,
+      "words": 55,
+      "media": 1,
+      "middle": 293,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-show",
+      "tag": "section",
+      "top": 1106,
+      "height": 2700,
+      "words": 28,
+      "media": 0,
+      "middle": 19,
+      "heading": {
+       "text": "இன்று நடவா,",
+       "size": 54,
+       "tag": "h2"
+      },
+      "left": 503,
+      "right": 208,
+      "textLeft": 503,
+      "textRight": 208,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section.lv-wind.lv-wrap",
+      "tag": "section",
+      "top": 3806,
+      "height": 980,
+      "words": 29,
+      "media": 2,
+      "middle": 20,
+      "heading": {
+       "text": "முதலில் வானிலை",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 846,
+      "textRight": 105,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools.lv-wrap",
+      "tag": "section",
+      "top": 4786,
+      "height": 1037,
+      "words": 42,
+      "media": 0,
+      "middle": 145,
+      "heading": {
+       "text": "ஆறு கருவிகள், ஒரே உதவியாளர்",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 98,
+      "textLeft": 32,
+      "textRight": 98,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-probe",
+      "tag": "section",
+      "top": 5996,
+      "height": 1016,
+      "words": 21,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "முதலில், உணரியை செருகுங்கள்.",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-cta",
+      "tag": "section",
+      "top": 7012,
+      "height": 900,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "கேள்வி கேட்கவா,",
+       "size": 54,
+       "tag": "h2"
+      },
+      "left": 317,
+      "right": 317,
+      "textLeft": 317,
+      "textRight": 317,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.lv-footer.lv-wrap",
+      "tag": "footer",
+      "top": 7912,
+      "height": 414,
+      "words": 60,
+      "media": 0,
+      "middle": 298,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 7112,
+      "height": 284
+     },
+     {
+      "top": 7888,
+      "height": 292
+     }
+    ],
+    "h1s": [
+     {
+      "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+      "size": 54,
+      "top": 726,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 4
+     },
+     {
+      "x": 846,
+      "n": 2
+     },
+     {
+      "x": 956,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 8,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.04,
+    "voidBox": {
+     "x": 0,
+     "y": 480,
+     "w": 960,
+     "h": 60
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.96,
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 5,
+    "transitions": 11,
+    "scripted": 1,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 9508,
+     "screens": 9.3,
+     "words": 239,
+     "img": 3,
+     "video": 1,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 1,
+     "uiPictures": 2,
+     "pictureSamples": [
+      "paddy-fields-thanjavur.jpg",
+      "paddy-field-full-of-spider-web-img.jpg",
+      "paddy-field-in-tamil-nadu-india.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 31.7,
+     "vw": 4.1,
+     "font": "__zodiak_92f844",
+     "weight": 300,
+     "tracking": 0,
+     "leading": 1.25,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 557,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+     "words": 5,
+     "lines": 2,
+     "size": 31.7,
+     "font": "__zodiak_92f844"
+    },
+    "headings": [
+     {
+      "text": "இன்று நடவா, அடுத்த வாரமா?",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 31.7,
+      "vw": 4.1,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "கேள்வி கேட்கவா, இலையைக் காட்டவா?",
+      "words": 4,
+      "chars": 32,
+      "lines": 2,
+      "size": 31.7,
+      "vw": 4.1,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+      "words": 5,
+      "chars": 37,
+      "lines": 2,
+      "size": 31.7,
+      "vw": 4.1,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 557,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "முதலில் வானிலை",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.74,
+      "top": 4779,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "ஆறு கருவிகள், ஒரே உதவியாளர்",
+      "words": 4,
+      "chars": 27,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 5672,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "உதவியாளரிடம் கேளுங்கள்",
+      "words": 2,
+      "chars": 22,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.8,
+      "top": 5892,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "உங்கள் மாவட்ட வானிலை",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.78,
+      "top": 6106,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "இன்றைய சந்தை விலை",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.72,
+      "top": 6170,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "மண்ணை அறிக",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.49,
+      "top": 6233,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "பூச்சியைக் கண்டறிக",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.62,
+      "top": 6297,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "மாவட்டம், பயிர்களை அமைக்க",
+      "words": 3,
+      "chars": 25,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.8,
+      "top": 6360,
+      "tag": "span",
+      "kind": "statement"
+     },
+     {
+      "text": "முதலில், உணரியை செருகுங்கள்.",
+      "words": 3,
+      "chars": 28,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 7200,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 2,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_2a03db",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "__zodiak_92f844",
+       "share": 0.16,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      18,
+      22,
+      32,
+      45
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_2a03db",
+      "size": 18.2,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.6
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "__zodiak_92f844",
+      "text": "முதலில் வானிலை"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.18,
+     "centerShare": 0.21,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#0f1f10",
+       "top": 0,
+       "hsl": {
+        "h": 124,
+        "s": 0.35,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#070d07",
+       "top": 1120,
+       "hsl": {
+        "h": 120,
+        "s": 0.3,
+        "l": 0.04
+       }
+      },
+      {
+       "color": "#162a17",
+       "top": 7168,
+       "hsl": {
+        "h": 123,
+        "s": 0.31,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#f3f5ef",
+       "top": 7977,
+       "hsl": {
+        "h": 80,
+        "s": 0.23,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f3f5ef",
+       "share": 0.63
+      },
+      {
+       "color": "#a9b2a6",
+       "share": 0.17
+      },
+      {
+       "color": "#0f1f10",
+       "share": 0.12
+      },
+      {
+       "color": "#44523f",
+       "share": 0.06
+      },
+      {
+       "color": "#c6f19d",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c6f19d",
+      "hsl": {
+       "h": 91,
+       "s": 0.75,
+       "l": 0.78
+      },
+      "fg": "#0f1f10"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "உரையாடலை தொடங்குங்கள்",
+      "செயலியை நிறுவுக",
+      "அழுத்திப் பேசுங்கள்"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.51
+     },
+     {
+      "type": "img",
+      "ratio": 0.43
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 83,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__zodiak_92f844",
+     "__zodiak_fallback_92f844",
+     "__hanken_grotesk_2a03db",
+     "__hanken_grotesk_fallback_2a03db",
+     "__noto_sans_tamil_75dee1"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 9508,
+    "margins": {
+     "left": 17,
+     "right": 17
+    },
+    "sections": [
+     {
+      "sel": "section.lv-hero",
+      "tag": "section",
+      "top": 0,
+      "height": 1024,
+      "words": 55,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 17,
+      "right": 17,
+      "textLeft": 17,
+      "textRight": 17,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-show",
+      "tag": "section",
+      "top": 1120,
+      "height": 3072,
+      "words": 28,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "இன்று நடவா,",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 257,
+      "right": 257,
+      "textLeft": 257,
+      "textRight": 257,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section.lv-wind.lv-wrap",
+      "tag": "section",
+      "top": 4192,
+      "height": 1384,
+      "words": 29,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "முதலில் வானிலை",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 17,
+      "right": 17,
+      "textLeft": 17,
+      "textRight": 313,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools.lv-wrap",
+      "tag": "section",
+      "top": 5576,
+      "height": 891,
+      "words": 42,
+      "media": 0,
+      "middle": 43,
+      "heading": {
+       "text": "ஆறு கருவிகள், ஒரே உதவியாளர்",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 17,
+      "right": 79,
+      "textLeft": 17,
+      "textRight": 79,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-probe",
+      "tag": "section",
+      "top": 6563,
+      "height": 1414,
+      "words": 21,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 17,
+      "right": 17,
+      "textLeft": 17,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-cta",
+      "tag": "section",
+      "top": 7977,
+      "height": 1024,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "கேள்வி கேட்கவா,",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 107,
+      "right": 88,
+      "textLeft": 107,
+      "textRight": 88,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.lv-footer.lv-wrap",
+      "tag": "footer",
+      "top": 9001,
+      "height": 507,
+      "words": 60,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 17,
+      "right": 30,
+      "textLeft": 17,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 8052,
+      "height": 368
+     },
+     {
+      "top": 8572,
+      "height": 364
+     },
+     {
+      "top": 8980,
+      "height": 328
+     }
+    ],
+    "h1s": [
+     {
+      "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+      "size": 32,
+      "top": 557,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 17,
+      "n": 7
+     }
+    ],
+    "leftBlocks": 7,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.89,
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 5,
+    "transitions": 11,
+    "scripted": 1,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 8119,
+     "screens": 9.6,
+     "words": 224,
+     "img": 3,
+     "video": 1,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 1,
+     "uiPictures": 2,
+     "pictureSamples": [
+      "paddy-fields-thanjavur.jpg",
+      "paddy-field-full-of-spider-web-img.jpg",
+      "paddy-field-in-tamil-nadu-india.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 29.6,
+     "vw": 7.6,
+     "font": "__zodiak_92f844",
+     "weight": 300,
+     "tracking": 0,
+     "leading": 1.25,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 378,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+     "words": 5,
+     "lines": 2,
+     "size": 29.6,
+     "font": "__zodiak_92f844"
+    },
+    "headings": [
+     {
+      "text": "இன்று நடவா, அடுத்த வாரமா?",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 24.8,
+      "vw": 6.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "கேள்வி கேட்கவா, இலையைக் காட்டவா?",
+      "words": 4,
+      "chars": 32,
+      "lines": 2,
+      "size": 24.8,
+      "vw": 6.4,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0,
+      "top": 0,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+      "words": 5,
+      "chars": 37,
+      "lines": 2,
+      "size": 29.6,
+      "vw": 7.6,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 378,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "முதலில் வானிலை",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4172,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "ஆறு கருவிகள், ஒரே உதவியாளர்",
+      "words": 4,
+      "chars": 27,
+      "lines": 2,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4809,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "உதவியாளரிடம் கேளுங்கள்",
+      "words": 2,
+      "chars": 22,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5004,
+      "tag": "a",
+      "kind": "statement"
+     },
+     {
+      "text": "உங்கள் மாவட்ட வானிலை",
+      "words": 3,
+      "chars": 20,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5237,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "இன்றைய சந்தை விலை",
+      "words": 3,
+      "chars": 17,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5320,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "மண்ணை அறிக",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5403,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "பூச்சியைக் கண்டறிக",
+      "words": 2,
+      "chars": 18,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5449,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "மாவட்டம், பயிர்களை அமைக்க",
+      "words": 3,
+      "chars": 25,
+      "lines": 2,
+      "size": 33.2,
+      "vw": 8.5,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5532,
+      "tag": "li",
+      "kind": "statement"
+     },
+     {
+      "text": "முதலில், உணரியை செருகுங்கள்.",
+      "words": 3,
+      "chars": 28,
+      "lines": 2,
+      "size": 35.1,
+      "vw": 9,
+      "font": "__zodiak_92f844",
+      "weight": 300,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6297,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 2,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_2a03db",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "__zodiak_92f844",
+       "share": 0.16,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      17,
+      19,
+      25,
+      30,
+      33,
+      35
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_2a03db",
+      "size": 17.3,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.6
+     },
+     "measureChars": 37,
+     "max": {
+      "size": 35.1,
+      "vw": 9,
+      "font": "__zodiak_92f844",
+      "text": "முதலில், உணரியை செருகுங்கள்."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.19,
+     "centerShare": 0.22,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#0f1f10",
+       "top": 0,
+       "hsl": {
+        "h": 124,
+        "s": 0.35,
+        "l": 0.09
+       }
+      },
+      {
+       "color": "#070d07",
+       "top": 1288,
+       "hsl": {
+        "h": 120,
+        "s": 0.3,
+        "l": 0.04
+       }
+      },
+      {
+       "color": "#162a17",
+       "top": 6265,
+       "hsl": {
+        "h": 123,
+        "s": 0.31,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#f3f5ef",
+       "top": 6797,
+       "hsl": {
+        "h": 80,
+        "s": 0.23,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f3f5ef",
+       "share": 0.62
+      },
+      {
+       "color": "#a9b2a6",
+       "share": 0.17
+      },
+      {
+       "color": "#0f1f10",
+       "share": 0.12
+      },
+      {
+       "color": "#44523f",
+       "share": 0.06
+      },
+      {
+       "color": "#c6f19d",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c6f19d",
+      "hsl": {
+       "h": 91,
+       "s": 0.75,
+       "l": 0.78
+      },
+      "fg": "#0f1f10"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "உரையாடலை தொடங்குங்கள்",
+      "செயலியை நிறுவுக",
+      "அழுத்திப் பேசுங்கள்"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.36
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": false,
+     "height": 82,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__zodiak_92f844",
+     "__zodiak_fallback_92f844",
+     "__hanken_grotesk_2a03db",
+     "__hanken_grotesk_fallback_2a03db",
+     "__noto_sans_tamil_75dee1"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 8119,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "section.lv-hero",
+      "tag": "section",
+      "top": 0,
+      "height": 1192,
+      "words": 52,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "தமிழில் கேளுங்கள்,",
+       "size": 30,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-show",
+      "tag": "section",
+      "top": 1288,
+      "height": 2532,
+      "words": 28,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "இன்று நடவா,",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 75,
+      "right": 75,
+      "textLeft": 75,
+      "textRight": 75,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section.lv-wind.lv-wrap",
+      "tag": "section",
+      "top": 3820,
+      "height": 893,
+      "words": 29,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "முதலில் வானிலை",
+       "size": 33,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools.lv-wrap",
+      "tag": "section",
+      "top": 4713,
+      "height": 902,
+      "words": 36,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "ஆறு கருவிகள், ஒரே உதவியாளர்",
+       "size": 33,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-probe",
+      "tag": "section",
+      "top": 5711,
+      "height": 1086,
+      "words": 21,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-cta",
+      "tag": "section",
+      "top": 6797,
+      "height": 844,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "கேள்வி கேட்கவா,",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 36,
+      "right": 36,
+      "textLeft": 36,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.lv-footer.lv-wrap",
+      "tag": "footer",
+      "top": 7641,
+      "height": 478,
+      "words": 60,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 24,
+      "textLeft": 16,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "தமிழில் கேளுங்கள், பண்ணை பதில் தரும்.",
+      "size": 30,
+      "top": 378,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 7
+     }
+    ],
+    "leftBlocks": 7,
+    "bodySize": 17,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "font-not-dealt",
+   "width": 1440,
+   "message": "The sheet dealt Zodiak and Hanken Grotesk, but the page renders __Hanken_Grotesk_2a03db, __zodiak_92f844.",
+   "fix": "Load the dealt face (the link on the sheet) and put it first in font-family. A build that falls back to a default face lands on the default look."
+  },
+  {
+   "level": "WARN",
+   "id": "pinned-over-picture",
+   "width": 1440,
+   "message": "Pinned large text slides across pictures while the page scrolls: \"இன்று நடவா,\" (screen 4, 100% over a picture); \"அடுத்த வாரமா?\" (screen 5, 100% over a picture)",
+   "fix": "Jurors read a pinned title crossing drawings or photographs as a collision. Keep the pictures in the column the title does not occupy, or unpin it."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/desktop-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/desktop-page-01.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/desktop-page-02.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/tablet-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/tablet-page-01.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/mobile-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/mobile-page-01.jpg",
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/final-ta/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

@@ -182,19 +182,8 @@
       "ph": "pH",
       "temp": "Soil temperature"
     },
-    "show": {
-      "a": "Plant it today,",
-      "b": "or next week?",
-      "caption": "Transplanting near Thanjavur. Ask whether this week's rain suits your nursery and the answer comes for your district, in your language.",
-      "alt": "Farmers transplanting paddy seedlings in a flooded field near Thanjavur"
-    },
-    "wind": {
-      "title": "The wind in the field is the forecast",
-      "body": "Before it answers about sowing, spraying or harvest, AgroVoiceAI looks at the weather where you farm: rain in the coming days, wind speed and heat.",
-      "alt": "Wind moving through a green rice field"
-    },
     "tools": {
-      "title": "Six tools, one assistant",
+      "title": "Five tools, one assistant",
       "find": "Find a tool",
       "empty": "No tool by that name. Try chat, weather, market, soil or pest.",
       "open": "Open",
@@ -223,47 +212,24 @@
         "desc": "Tell it where you farm and what you grow once. Every answer uses it."
       }
     },
-    "probe": {
-      "label": "Soil probe stage",
-      "s1": {
-        "name": "Probe",
-        "clause": "First, push the probe into the bund."
-      },
-      "s2": {
-        "name": "Readings",
-        "clause": "Then it reads the soil every ten seconds."
-      },
-      "s3": {
-        "name": "Question",
-        "clause": "Next, ask what the numbers mean."
-      },
-      "s4": {
-        "name": "Answer",
-        "clause": "Finally, act on a plain answer."
-      },
-      "device": "ESP8266 soil probe",
-      "online": "Online",
-      "every": "Sends a reading every 10 seconds over Wi-Fi",
-      "plot": "Plot",
-      "plotName": "East field, paddy",
-      "question": "Nitrogen is 18 mg/kg. What should I add before transplanting?",
-      "answer": "Nitrogen is low for paddy. Work farmyard manure in at the last ploughing, then split urea into three doses: at transplanting, at tillering and at panicle initiation.",
-      "you": "You",
-      "bot": "AgroVoiceAI"
-    },
-    "cta": {
-      "l1": "Ask a question,",
-      "l2": "or show a leaf?",
-      "chat": "Start chatting",
-      "pest": "Identify a pest",
-      "or": "or",
-      "after": "Sign in once and your district and crops are remembered for every answer."
-    },
     "footer": {
       "what": "A farming assistant for Tamil Nadu",
       "credits": "Photographs and film from Wikimedia Commons:",
       "about": "About",
       "contact": "Contact"
+    },
+    "preview": {
+      "label": "Example conversation",
+      "q": "நாற்று நட்டு 20 நாள் ஆச்சு. யூரியா எவ்வளவு போடணும்?",
+      "qt": "Seedlings were planted 20 days ago. How much urea should I add?",
+      "a": "For paddy at tillering, apply about 30 kg of urea per acre. Drain the field to a thin film of water first, and spread it in the evening.",
+      "speak": "Speak or type your question",
+      "district": "Thanjavur · Paddy"
+    },
+    "story": {
+      "l1": "One question,",
+      "l2": "spoken in your language,",
+      "l3": "answered for your field."
     }
   }
 }

@@ -1,0 +1,1235 @@
+{
+ "url": "http://localhost:3100/en",
+ "at": "2026-10-28T13:56:40.270Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1755,
+     "screens": 2,
+     "words": 157,
+     "img": 0,
+     "video": 0,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Ask your farm in Tamil.",
+     "words": 5,
+     "chars": 23,
+     "lines": 2,
+     "size": 82.2,
+     "vw": 5.7,
+     "font": "__Hanken_Grotesk_bd326e",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 1.02,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.41,
+     "top": 296,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Ask your farm in Tamil.",
+     "words": 5,
+     "lines": 2,
+     "size": 82.2,
+     "font": "__Hanken_Grotesk_bd326e"
+    },
+    "headings": [
+     {
+      "text": "Ask your farm in Tamil.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 82.2,
+      "vw": 5.7,
+      "font": "__Hanken_Grotesk_bd326e",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 296,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Six tools, one assistant",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "__Hanken_Grotesk_bd326e",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1022,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_bd326e",
+       "share": 1,
+       "mono": false
+      },
+      {
+       "family": "__GeistMono_f910ec",
+       "share": 0,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      15,
+      17,
+      20,
+      44,
+      82
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_bd326e",
+      "size": 17,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.2
+     },
+     "measureChars": 54,
+     "max": {
+      "size": 82.2,
+      "vw": 5.7,
+      "font": "__Hanken_Grotesk_bd326e",
+      "text": "Ask your farm"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "__GeistMono_f910ec"
+     ],
+     "monoSamples": [
+      "xl"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#eef0ea",
+       "top": 0,
+       "hsl": {
+        "h": 80,
+        "s": 0.17,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#4a544c",
+       "share": 0.6
+      },
+      {
+       "color": "#15201a",
+       "share": 0.37
+      },
+      {
+       "color": "#eef0ea",
+       "share": 0.02
+      },
+      {
+       "color": "#2f6b2f",
+       "share": 0.01
+      },
+      {
+       "color": "#ffffff",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#15201a",
+      "hsl": {
+       "h": 147,
+       "s": 0.21,
+       "l": 0.1
+      },
+      "fg": "#eef0ea"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Start chatting",
+      "Hold to speak"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 1,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.38
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": false,
+     "height": 74,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__geistmono_f910ec",
+     "__hanken_grotesk_bd326e",
+     "__hanken_grotesk_fallback_bd326e",
+     "__noto_sans_tamil_41020b"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1755,
+    "margins": {
+     "left": 56,
+     "right": 56
+    },
+    "sections": [
+     {
+      "sel": "main.lv-hero",
+      "tag": "main",
+      "top": 74,
+      "height": 820,
+      "words": 38,
+      "media": 1,
+      "middle": 85,
+      "heading": {
+       "text": "Ask your farm",
+       "size": 82,
+       "tag": "h1"
+      },
+      "left": 56,
+      "right": 56,
+      "textLeft": 56,
+      "textRight": 354,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools",
+      "tag": "section",
+      "top": 894,
+      "height": 783,
+      "words": 98,
+      "media": 0,
+      "middle": 36,
+      "heading": {
+       "text": "Six tools, one assistant",
+       "size": 44,
+       "tag": "h2"
+      },
+      "left": 56,
+      "right": 135,
+      "textLeft": 56,
+      "textRight": 135,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Ask your farm in Tamil.",
+      "size": 82,
+      "top": 296,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 56,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.11,
+    "voidBox": {
+     "x": 60,
+     "y": 660,
+     "w": 600,
+     "h": 240
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1989,
+     "screens": 1.9,
+     "words": 157,
+     "img": 0,
+     "video": 0,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Ask your farm in Tamil.",
+     "words": 5,
+     "chars": 23,
+     "lines": 2,
+     "size": 51.3,
+     "vw": 6.7,
+     "font": "__Hanken_Grotesk_bd326e",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 1.02,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 106,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Ask your farm in Tamil.",
+     "words": 5,
+     "lines": 2,
+     "size": 51.3,
+     "font": "__Hanken_Grotesk_bd326e"
+    },
+    "headings": [
+     {
+      "text": "Ask your farm in Tamil.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 51.3,
+      "vw": 6.7,
+      "font": "__Hanken_Grotesk_bd326e",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 106,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Six tools, one assistant",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 34.6,
+      "vw": 4.5,
+      "font": "__Hanken_Grotesk_bd326e",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1053,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_bd326e",
+       "share": 1,
+       "mono": false
+      },
+      {
+       "family": "__GeistMono_f910ec",
+       "share": 0,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      15,
+      17,
+      18,
+      20,
+      35,
+      51
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_bd326e",
+      "size": 17,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.2
+     },
+     "measureChars": 59,
+     "max": {
+      "size": 51.3,
+      "vw": 6.7,
+      "font": "__Hanken_Grotesk_bd326e",
+      "text": "Ask your farm"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "__GeistMono_f910ec"
+     ],
+     "monoSamples": [
+      "md"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#eef0ea",
+       "top": 0,
+       "hsl": {
+        "h": 80,
+        "s": 0.17,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#4a544c",
+       "share": 0.6
+      },
+      {
+       "color": "#15201a",
+       "share": 0.37
+      },
+      {
+       "color": "#eef0ea",
+       "share": 0.02
+      },
+      {
+       "color": "#2f6b2f",
+       "share": 0.01
+      },
+      {
+       "color": "#ffffff",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#15201a",
+      "hsl": {
+       "h": 147,
+       "s": 0.21,
+       "l": 0.1
+      },
+      "fg": "#eef0ea"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Start chatting",
+      "Hold to speak"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 5,
+     "boxRadius": 16,
+     "squareMedia": 1,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.48
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": false,
+     "height": 74,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__geistmono_f910ec",
+     "__hanken_grotesk_bd326e",
+     "__hanken_grotesk_fallback_bd326e",
+     "__noto_sans_tamil_41020b"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1989,
+    "margins": {
+     "left": 31,
+     "right": 31
+    },
+    "sections": [
+     {
+      "sel": "main.lv-hero",
+      "tag": "main",
+      "top": 74,
+      "height": 902,
+      "words": 38,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Ask your farm",
+       "size": 51,
+       "tag": "h1"
+      },
+      "left": 31,
+      "right": 31,
+      "textLeft": 31,
+      "textRight": 193,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools",
+      "tag": "section",
+      "top": 977,
+      "height": 897,
+      "words": 98,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Six tools, one assistant",
+       "size": 35,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 98,
+      "textLeft": 31,
+      "textRight": 98,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Ask your farm in Tamil.",
+      "size": 51,
+      "top": 106,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 31,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 2069,
+     "screens": 2.5,
+     "words": 157,
+     "img": 0,
+     "video": 0,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Ask your farm in Tamil.",
+     "words": 5,
+     "chars": 23,
+     "lines": 2,
+     "size": 40,
+     "vw": 10.3,
+     "font": "__Hanken_Grotesk_bd326e",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 1.02,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 106,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Ask your farm in Tamil.",
+     "words": 5,
+     "lines": 2,
+     "size": 40,
+     "font": "__Hanken_Grotesk_bd326e"
+    },
+    "headings": [
+     {
+      "text": "Ask your farm in Tamil.",
+      "words": 5,
+      "chars": 23,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "__Hanken_Grotesk_bd326e",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 106,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Six tools, one assistant",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "__Hanken_Grotesk_bd326e",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 945,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Hanken_Grotesk_bd326e",
+       "share": 1,
+       "mono": false
+      },
+      {
+       "family": "__GeistMono_f910ec",
+       "share": 0,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      15,
+      17,
+      20,
+      28,
+      40
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "__Hanken_Grotesk_bd326e",
+      "size": 17.2,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.6
+     },
+     "measureChars": 42,
+     "max": {
+      "size": 40,
+      "vw": 10.3,
+      "font": "__Hanken_Grotesk_bd326e",
+      "text": "Ask your farm"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "__GeistMono_f910ec"
+     ],
+     "monoSamples": [
+      "xs"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#eef0ea",
+       "top": 0,
+       "hsl": {
+        "h": 80,
+        "s": 0.17,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#4a544c",
+       "share": 0.6
+      },
+      {
+       "color": "#15201a",
+       "share": 0.37
+      },
+      {
+       "color": "#eef0ea",
+       "share": 0.02
+      },
+      {
+       "color": "#2f6b2f",
+       "share": 0.01
+      },
+      {
+       "color": "#ffffff",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#15201a",
+      "hsl": {
+       "h": 147,
+       "s": 0.21,
+       "l": 0.1
+      },
+      "fg": "#eef0ea"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Start chatting",
+      "Hold to speak"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 5,
+     "boxRadius": 16,
+     "squareMedia": 1,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 0.44
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": false,
+     "height": 74,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__geistmono_f910ec",
+     "__hanken_grotesk_bd326e",
+     "__hanken_grotesk_fallback_bd326e",
+     "__noto_sans_tamil_41020b"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 2069,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "main.lv-hero",
+      "tag": "main",
+      "top": 74,
+      "height": 807,
+      "words": 38,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Ask your farm",
+       "size": 40,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.lv-tools",
+      "tag": "section",
+      "top": 881,
+      "height": 1072,
+      "words": 98,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Six tools, one assistant",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 80,
+      "textLeft": 16,
+      "textRight": 80,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Ask your farm in Tamil.",
+      "size": 40,
+      "top": 106,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 17,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "grey-body",
+   "width": 1440,
+   "message": "The running text is a soft grey on its ground (6.2:1).",
+   "fix": "Set body copy in the full ink (7:1 or more). Keep the muted ink for secondary notes; pages read thin and unfinished when everything is grey.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 0 picture(s) on the page (0 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "font-not-dealt",
+   "width": 1440,
+   "message": "The sheet dealt Zodiak and Hanken Grotesk, but the page renders __Hanken_Grotesk_bd326e, __GeistMono_f910ec.",
+   "fix": "Load the dealt face (the link on the sheet) and put it first in font-family. A build that falls back to a default face lands on the default look."
+  },
+  {
+   "level": "FAIL",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Only 0 element(s) moved while the page loaded and scrolled.",
+   "fix": "Build the motion layer (SKILL.md step 9, references/motion.md): the signature move, an entrance for the parts of every section, feedback on every control, and one moving picture. Transform and opacity only, with a reduced-motion fallback."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/v2/desktop-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/v2/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/v2/tablet-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/v2/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/v2/mobile-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/v2/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
