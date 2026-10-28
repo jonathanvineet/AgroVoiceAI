@@ -1,0 +1,1723 @@
+{
+ "url": "http://localhost:3100/en",
+ "at": "2026-10-28T13:22:36.789Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.96,
+    0.99,
+    0.99,
+    0.99
+   ],
+   "motion": {
+    "elements": 12,
+    "css": 4,
+    "transitions": 8,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3084,
+     "screens": 3.4,
+     "words": 162,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 12,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2F_next%2Fstatic%2Fmedia%2Fcrop-field",
+      "pests.ee3c640b.jpeg",
+      "weather-cloud.7452dfda.jpeg",
+      "crop-mgmt.a038f455.jpeg",
+      "market.d5f3bb98.jpeg",
+      "farmqa.45828b79.jpeg",
+      "soil.91a43032.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "AgroVoiceAI",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 96,
+     "vw": 6.7,
+     "font": "__Poppins_db30dc",
+     "weight": 700,
+     "tracking": -0.05,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 316,
+     "gradientText": true,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "AgroVoiceAI",
+     "words": 1,
+     "lines": 1,
+     "size": 96,
+     "font": "__Poppins_db30dc"
+    },
+    "headings": [
+     {
+      "text": "AgroVoiceAI",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "__Poppins_db30dc",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 316,
+      "gradientText": true,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Everything you need in a chatbot",
+      "words": 6,
+      "chars": 32,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "__Bricolage_Grotesque_d31147",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.48,
+      "top": 964,
+      "gradientText": true,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 2,
+     "medianWords": 6,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Bricolage_Grotesque_d31147",
+       "share": 0.8,
+       "mono": false
+      },
+      {
+       "family": "__calSans_829c8b",
+       "share": 0.12,
+       "mono": false
+      },
+      {
+       "family": "__Poppins_db30dc",
+       "share": 0.08,
+       "mono": false
+      },
+      {
+       "family": "__GeistMono_f910ec",
+       "share": 0,
+       "mono": true
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      24,
+      48,
+      96
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "__Bricolage_Grotesque_d31147",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.2
+     },
+     "measureChars": 113,
+     "max": {
+      "size": 96,
+      "vw": 6.7,
+      "font": "__Poppins_db30dc",
+      "text": "AgroVoiceAI"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "__GeistMono_f910ec"
+     ],
+     "monoSamples": [
+      "xl"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.26,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#000000",
+       "top": 0,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#d4d4d4",
+       "share": 0.61
+      },
+      {
+       "color": "#9ca3af",
+       "share": 0.19
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.14
+      },
+      {
+       "color": "#052e16",
+       "share": 0.02
+      },
+      {
+       "color": "#f8fafc",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#22c55e",
+      "hsl": {
+       "h": 142,
+       "s": 0.71,
+       "l": 0.45
+      },
+      "fg": "#052e16"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Sign up",
+      "Start Chatting",
+      "Download app"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 2,
+     "shadowSamples": [
+      "select.appearance-none.cursor-pointer → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button.text-sm.ring-offset-background → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38, ",
+      "button.text-sm.shadow → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38, "
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 2,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 7,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 7,
+     "boxRadius": 12,
+     "squareMedia": 1,
+     "roundedMedia": 7,
+     "mediaRadius": 10,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 8,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__poppins_db30dc",
+     "__bricolage_grotesque_d31147",
+     "__calsans_829c8b",
+     "__geistsans_fb8f2c",
+     "__geistsans_fallback_fb8f2c",
+     "__geistmono_f910ec"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 3084,
+    "margins": {
+     "left": 129,
+     "right": 129
+    },
+    "sections": [
+     {
+      "sel": "div.min-h-screen.w-full",
+      "tag": "div",
+      "top": 0,
+      "height": 900,
+      "words": 32,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "AgroVoiceAI",
+       "size": 96,
+       "tag": "h1"
+      },
+      "left": 88,
+      "right": 88,
+      "textLeft": 88,
+      "textRight": 88,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid.grid-cols-1",
+      "tag": "div",
+      "top": 1036,
+      "height": 2024,
+      "words": 128,
+      "media": 7,
+      "middle": 0,
+      "heading": {
+       "text": "Crop Recommendations",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 129,
+      "right": 129,
+      "textLeft": 129,
+      "textRight": 137,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "AgroVoiceAI",
+      "size": 96,
+      "top": 316,
+      "firstScreen": true
+     },
+     {
+      "text": "Everything you need in a chatbot",
+      "size": 48,
+      "top": 964,
+      "firstScreen": false
+     }
+    ],
+    "edgeText": [],
+    "edges": [],
+    "leftBlocks": 0,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.98,
+    0.99,
+    0.99
+   ],
+   "motion": {
+    "elements": 5,
+    "css": 4,
+    "transitions": 1,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 2801,
+     "screens": 2.7,
+     "words": 155,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 12,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2F_next%2Fstatic%2Fmedia%2Fcrop-field",
+      "pests.ee3c640b.jpeg",
+      "weather-cloud.7452dfda.jpeg",
+      "crop-mgmt.a038f455.jpeg",
+      "market.d5f3bb98.jpeg",
+      "farmqa.45828b79.jpeg",
+      "soil.91a43032.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "AgroVoiceAI",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 96,
+     "vw": 12.5,
+     "font": "__Poppins_db30dc",
+     "weight": 700,
+     "tracking": -0.05,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 359,
+     "gradientText": true,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "AgroVoiceAI",
+     "words": 1,
+     "lines": 1,
+     "size": 96,
+     "font": "__Poppins_db30dc"
+    },
+    "headings": [
+     {
+      "text": "AgroVoiceAI",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 96,
+      "vw": 12.5,
+      "font": "__Poppins_db30dc",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 359,
+      "gradientText": true,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Everything you need in a chatbot",
+      "words": 6,
+      "chars": 32,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "__Bricolage_Grotesque_d31147",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 1088,
+      "gradientText": true,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 2,
+     "medianWords": 6,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Bricolage_Grotesque_d31147",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "__calSans_829c8b",
+       "share": 0.12,
+       "mono": false
+      },
+      {
+       "family": "__Poppins_db30dc",
+       "share": 0.03,
+       "mono": false
+      },
+      {
+       "family": "__GeistMono_f910ec",
+       "share": 0,
+       "mono": true
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      24,
+      48,
+      96
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "__Bricolage_Grotesque_d31147",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.2
+     },
+     "measureChars": 60,
+     "max": {
+      "size": 96,
+      "vw": 12.5,
+      "font": "__Poppins_db30dc",
+      "text": "AgroVoiceAI"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "__GeistMono_f910ec"
+     ],
+     "monoSamples": [
+      "md"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.23,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#000000",
+       "top": 0,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#d4d4d4",
+       "share": 0.64
+      },
+      {
+       "color": "#9ca3af",
+       "share": 0.16
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.13
+      },
+      {
+       "color": "#052e16",
+       "share": 0.02
+      },
+      {
+       "color": "#f8fafc",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#22c55e",
+      "hsl": {
+       "h": 142,
+       "s": 0.71,
+       "l": 0.45
+      },
+      "fg": "#052e16"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Sign up",
+      "Start Chatting",
+      "Download app"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 3,
+     "shadowSamples": [
+      "select.appearance-none.cursor-pointer → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button.text-sm.ring-offset-background → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38, ",
+      "button.text-sm.shadow → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38, "
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 2,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 7,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 7,
+     "boxRadius": 12,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 10,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__poppins_db30dc",
+     "__bricolage_grotesque_d31147",
+     "__calsans_829c8b",
+     "__geistsans_fb8f2c",
+     "__geistsans_fallback_fb8f2c",
+     "__geistmono_f910ec"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 2801,
+    "margins": {
+     "left": 36,
+     "right": 36
+    },
+    "sections": [
+     {
+      "sel": "div.min-h-screen.w-full",
+      "tag": "div",
+      "top": 0,
+      "height": 1024,
+      "words": 32,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "AgroVoiceAI",
+       "size": 96,
+       "tag": "h1"
+      },
+      "left": 26,
+      "right": 26,
+      "textLeft": 26,
+      "textRight": 26,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 1024,
+      "height": 136,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Everything you need in a chatbot",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 36,
+      "right": 36,
+      "textLeft": 36,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid.grid-cols-1",
+      "tag": "div",
+      "top": 1160,
+      "height": 1617,
+      "words": 128,
+      "media": 7,
+      "middle": 0,
+      "heading": {
+       "text": "Crop Recommendations",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 50,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "AgroVoiceAI",
+      "size": 96,
+      "top": 359,
+      "firstScreen": true
+     },
+     {
+      "text": "Everything you need in a chatbot",
+      "size": 48,
+      "top": 1088,
+      "firstScreen": false
+     }
+    ],
+    "edgeText": [],
+    "edges": [],
+    "leftBlocks": 0,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.98,
+    1,
+    1,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 5,
+    "css": 4,
+    "transitions": 1,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 3628,
+     "screens": 4.3,
+     "words": 153,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 12,
+     "sections": 0,
+     "horizontalOverflow": 8,
+     "overflowCulprits": [
+      "div.container.flex (+8px)"
+     ],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2F_next%2Fstatic%2Fmedia%2Fcrop-field",
+      "pests.ee3c640b.jpeg",
+      "weather-cloud.7452dfda.jpeg",
+      "crop-mgmt.a038f455.jpeg",
+      "market.d5f3bb98.jpeg",
+      "farmqa.45828b79.jpeg",
+      "soil.91a43032.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "AgroVoiceAI",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 60,
+     "vw": 15.4,
+     "font": "__Poppins_db30dc",
+     "weight": 700,
+     "tracking": -0.05,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 269,
+     "gradientText": true,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "AgroVoiceAI",
+     "words": 1,
+     "lines": 1,
+     "size": 60,
+     "font": "__Poppins_db30dc"
+    },
+    "headings": [
+     {
+      "text": "AgroVoiceAI",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 60,
+      "vw": 15.4,
+      "font": "__Poppins_db30dc",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 269,
+      "gradientText": true,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Everything you need in a chatbot",
+      "words": 6,
+      "chars": 32,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "__Bricolage_Grotesque_d31147",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 908,
+      "gradientText": true,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Crop Recommendations",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "__calSans_829c8b",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1200,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Pest Identification",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "__calSans_829c8b",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1655,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Weather Forecasting",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "__calSans_829c8b",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2059,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Crop Management Tips",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "__calSans_829c8b",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2357,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Market Prices and Trends",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "__calSans_829c8b",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2658,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Farming Q&A",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "__calSans_829c8b",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3088,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Soil Health Assessment",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "__calSans_829c8b",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3403,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 2,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "__Bricolage_Grotesque_d31147",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "__calSans_829c8b",
+       "share": 0.12,
+       "mono": false
+      },
+      {
+       "family": "__Poppins_db30dc",
+       "share": 0.03,
+       "mono": false
+      },
+      {
+       "family": "__GeistMono_f910ec",
+       "share": 0,
+       "mono": true
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      24,
+      36,
+      60
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "__Bricolage_Grotesque_d31147",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 47,
+     "max": {
+      "size": 60,
+      "vw": 15.4,
+      "font": "__Poppins_db30dc",
+      "text": "AgroVoiceAI"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "__GeistMono_f910ec"
+     ],
+     "monoSamples": [
+      "xs"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.23,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#020817",
+     "bodyBgHsl": {
+      "h": 223,
+      "s": 0.84,
+      "l": 0.05
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#020817",
+       "top": 0,
+       "hsl": {
+        "h": 223,
+        "s": 0.84,
+        "l": 0.05
+       }
+      },
+      {
+       "color": "#000000",
+       "top": 0,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#d4d4d4",
+       "share": 0.64
+      },
+      {
+       "color": "#9ca3af",
+       "share": 0.16
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.13
+      },
+      {
+       "color": "#052e16",
+       "share": 0.02
+      },
+      {
+       "color": "#f8fafc",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#22c55e",
+      "hsl": {
+       "h": 142,
+       "s": 0.71,
+       "l": 0.45
+      },
+      "fg": "#052e16"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Sign up",
+      "Start Chatting",
+      "Download app"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 3,
+     "shadowSamples": [
+      "button.text-sm.ring-offset-background → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38, ",
+      "button.text-sm.shadow → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38, "
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 2,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 7,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 7,
+     "boxRadius": 12,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 10,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "__poppins_db30dc",
+     "__bricolage_grotesque_d31147",
+     "__calsans_829c8b",
+     "__geistmono_f910ec"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 3628,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "div.min-h-screen.w-full",
+      "tag": "div",
+      "top": 0,
+      "height": 844,
+      "words": 32,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "AgroVoiceAI",
+       "size": 60,
+       "tag": "h1"
+      },
+      "left": 14,
+      "right": 14,
+      "textLeft": 14,
+      "textRight": 14,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 844,
+      "height": 168,
+      "words": 6,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Everything you need in a chatbot",
+       "size": 36,
+       "tag": "h1"
+      },
+      "left": 31,
+      "right": 31,
+      "textLeft": 31,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.md:col-span-2",
+      "tag": "div",
+      "top": 1052,
+      "height": 309,
+      "words": 21,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Crop Recommendations",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 54,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.md:col-span-1",
+      "tag": "div",
+      "top": 1377,
+      "height": 391,
+      "words": 14,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Pest Identification",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 59,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.md:col-span-1",
+      "tag": "div",
+      "top": 1784,
+      "height": 412,
+      "words": 17,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Weather Forecasting",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 60,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.md:col-span-2",
+      "tag": "div",
+      "top": 2212,
+      "height": 282,
+      "words": 23,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Crop Management Tips",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 62,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.md:col-span-2",
+      "tag": "div",
+      "top": 2510,
+      "height": 285,
+      "words": 18,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Market Prices and Trends",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 63,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.md:col-span-1",
+      "tag": "div",
+      "top": 2811,
+      "height": 391,
+      "words": 10,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Farming Q&A",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 72,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.md:col-span-3.mx-auto",
+      "tag": "div",
+      "top": 3217,
+      "height": 347,
+      "words": 25,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Soil Health Assessment",
+       "size": 24,
+       "tag": "div"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 58,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "AgroVoiceAI",
+      "size": 60,
+      "top": 269,
+      "firstScreen": true
+     },
+     {
+      "text": "Everything you need in a chatbot",
+      "size": 36,
+      "top": 908,
+      "firstScreen": false
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Meet AgroVoiceAI: Your virtual agronomy expert, re",
+      "side": "left",
+      "px": 14
+     }
+    ],
+    "edges": [],
+    "leftBlocks": 0,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "gradient-text",
+   "width": 1440,
+   "message": "2 gradient-filled text element(s).",
+   "fix": "Solid colour text.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "3 box-shadow(s) on elements at rest: select.appearance-none.cursor-pointer → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | button.text-sm.ring-offset-background → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38,  | button.text-sm.shadow → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(38, 38, ",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "7 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (__Bricolage_Grotesque_d31147, __calSans_829c8b, __Poppins_db30dc).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "measure",
+   "width": 1440,
+   "message": "Longest paragraph runs about 113 characters per line.",
+   "fix": "Cap paragraphs at 45–75 characters (max-width: 60ch)."
+  },
+  {
+   "level": "WARN",
+   "id": "font-not-dealt",
+   "width": 1440,
+   "message": "The sheet dealt Zodiak and Hanken Grotesk, but the page renders __Bricolage_Grotesque_d31147, __calSans_829c8b.",
+   "fix": "Load the dealt face (the link on the sheet) and put it first in font-family. A build that falls back to a default face lands on the default look."
+  },
+  {
+   "level": "WARN",
+   "id": "many-h1",
+   "width": 1440,
+   "message": "2 h1 elements.",
+   "fix": "One h1 per page; section titles are h2.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Little motion: 12 element(s) moved while the page loaded and scrolled.",
+   "fix": "Give every section an entrance for its parts (not one fade of the whole block) and add one moving picture: a looping clip or a slow move on a photograph."
+  },
+  {
+   "level": "FAIL",
+   "id": "overflow",
+   "width": 390,
+   "message": "Page scrolls sideways by 8px at 390px. Widest offenders: div.container.flex (+8px).",
+   "fix": "Constrain the element that is wider than the viewport (max-width: 100%, or overflow: clip on its section)."
+  },
+  {
+   "level": "WARN",
+   "id": "name-only-title",
+   "width": 390,
+   "message": "The h1 is a bare name (\"AgroVoiceAI\") and nothing else on the first screen says what this is.",
+   "fix": "Keep the name if it leads, and give the line under it (18px or more) the plain words: what it is, for whom, where or when. In the study of 97 Sites of the Day, first screens that named nothing lost usability and content points."
+  },
+  {
+   "level": "WARN",
+   "id": "edge-text",
+   "width": 390,
+   "message": "1 text block(s) sit 12–15px from the phone's edge: \"Meet AgroVoiceAI: Your virtual\" (14px)",
+   "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/before/desktop-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/before/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/before/tablet-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/before/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/before/mobile-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/AgroVoiceAI/.taste-skill/before/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

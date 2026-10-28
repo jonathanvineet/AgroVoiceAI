@@ -154,5 +154,116 @@
       "signin": "Sign In",
       "forgot": "Forgot Password?"
     }
+  },
+  "Landing": {
+    "nav": {
+      "chat": "Chat",
+      "weather": "Weather",
+      "market": "Market",
+      "signin": "Sign in",
+      "explore": "Explore",
+      "switch": "தமிழ்"
+    },
+    "hero": {
+      "l1": "Ask your farm",
+      "l2": "in Tamil.",
+      "desc": "AgroVoiceAI is a farming assistant you can talk to in Tamil or English: crop advice, your district's weather, today's market prices, soil readings and pest checks.",
+      "cta": "Start chatting",
+      "install": "Install the app",
+      "mic": "Hold to speak",
+      "listening": "Listening. Speak to the field.",
+      "denied": "Microphone blocked. Move across the field to make wind instead.",
+      "stage": "A lit plot of paddy on red Tamil Nadu soil with a soil probe in it. The plants sway with your voice.",
+      "reading": "Probe reading, sample plot",
+      "n": "Nitrogen",
+      "p": "Phosphorus",
+      "k": "Potassium",
+      "moisture": "Moisture",
+      "ph": "pH",
+      "temp": "Soil temperature"
+    },
+    "show": {
+      "a": "Plant it today,",
+      "b": "or next week?",
+      "caption": "Transplanting near Thanjavur. Ask whether this week's rain suits your nursery and the answer comes for your district, in your language.",
+      "alt": "Farmers transplanting paddy seedlings in a flooded field near Thanjavur"
+    },
+    "wind": {
+      "title": "The wind in the field is the forecast",
+      "body": "Before it answers about sowing, spraying or harvest, AgroVoiceAI looks at the weather where you farm: rain in the coming days, wind speed and heat.",
+      "alt": "Wind moving through a green rice field"
+    },
+    "tools": {
+      "title": "Six tools, one assistant",
+      "find": "Find a tool",
+      "empty": "No tool by that name. Try chat, weather, market, soil or pest.",
+      "open": "Open",
+      "chat": {
+        "name": "Ask the assistant",
+        "desc": "Type or speak a question in Tamil or English. Answers take your district and crops into account."
+      },
+      "weather": {
+        "name": "Weather for your district",
+        "desc": "The forecast for where you farm, with rain and wind, for planning field work."
+      },
+      "market": {
+        "name": "Today's market prices",
+        "desc": "Wholesale and retail prices for vegetables and fruits, so you know what a load is worth before you leave."
+      },
+      "soil": {
+        "name": "Read your soil",
+        "desc": "Readings from the soil probe, explained, with fertiliser advice in plain words."
+      },
+      "pest": {
+        "name": "Identify a pest",
+        "desc": "Photograph a damaged leaf. The assistant names the pest or disease and what to do about it."
+      },
+      "settings": {
+        "name": "Set your district and crops",
+        "desc": "Tell it where you farm and what you grow once. Every answer uses it."
+      }
+    },
+    "probe": {
+      "label": "Soil probe stage",
+      "s1": {
+        "name": "Probe",
+        "clause": "First, push the probe into the bund."
+      },
+      "s2": {
+        "name": "Readings",
+        "clause": "Then it reads the soil every ten seconds."
+      },
+      "s3": {
+        "name": "Question",
+        "clause": "Next, ask what the numbers mean."
+      },
+      "s4": {
+        "name": "Answer",
+        "clause": "Finally, act on a plain answer."
+      },
+      "device": "ESP8266 soil probe",
+      "online": "Online",
+      "every": "Sends a reading every 10 seconds over Wi-Fi",
+      "plot": "Plot",
+      "plotName": "East field, paddy",
+      "question": "Nitrogen is 18 mg/kg. What should I add before transplanting?",
+      "answer": "Nitrogen is low for paddy. Work farmyard manure in at the last ploughing, then split urea into three doses: at transplanting, at tillering and at panicle initiation.",
+      "you": "You",
+      "bot": "AgroVoiceAI"
+    },
+    "cta": {
+      "l1": "Ask a question,",
+      "l2": "or show a leaf?",
+      "chat": "Start chatting",
+      "pest": "Identify a pest",
+      "or": "or",
+      "after": "Sign in once and your district and crops are remembered for every answer."
+    },
+    "footer": {
+      "what": "A farming assistant for Tamil Nadu",
+      "credits": "Photographs and film from Wikimedia Commons:",
+      "about": "About",
+      "contact": "Contact"
+    }
   }
 }
